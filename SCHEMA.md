@@ -46,6 +46,7 @@ raw/                      Immutable source. The book, split into section files.
 wiki/                     LLM-owned. The agent writes here; a human only reads.
   index.md                Catalog of all pages, grouped by topic. Query entry point.
   log.md                  Append-only record of every operation.
+  _review.md              Human-review queue (e.g. no-fit keyword flags). Minimal; see section 9.
   concepts/               Concept pages (ideas, techniques, methods).
   entities/               Entity pages (people, tools, orgs, datasets, models).
   sources/                One page per ingested section. Provenance + citation label.
@@ -127,10 +128,13 @@ sources: [<source-page-slug>, ...]
 ---
 # <Page title>
 
-<One-paragraph definition or description. The book's own academic references (e.g.
-"(Sanh et al., 2019)") stay inline where they occur — they are the source's scholarship.
-The provenance citation (LABEL p.NNN) closes the claim-cluster: cite once at the end of
-a run of claims drawn from one page, not after every sentence.>
+<Definition or description, kept as tight as the concept allows. One main idea per page:
+if it grows past two or three short paragraphs, that is a signal to split the page or
+push detail onto a linked page, not to write more here. Include only what would change
+an answer; cut padding. The book's own academic references (e.g. "(Sanh et al., 2019)")
+stay inline where they occur — they are the source's scholarship. The provenance citation
+(LABEL p.NNN) closes the claim-cluster: cite once at the end of a run of claims drawn
+from one page, not after every sentence.>
 
 ## Key figures
 <Load-bearing numbers preserved verbatim, each with a page cite. A figure is
@@ -149,12 +153,14 @@ detail lives on the linked entity page. Omit this section on entity and synthesi
 - [[distilbert]]  (student trained from scratch; canonical case)
 
 ## Related
-<Links to other pages, each with a short reason. This section carries comparison and
-synthesis questions, so it must be substantive. Missing connective tissue is the main
-way this wiki fails a synthesis question.>
+<Links to other pages. Each reason begins with one or more relationship keywords from the
+closed set (below), followed by ": " and a brief gloss; put direction in the gloss. A
+link may carry more than one keyword when the relationship is genuinely compound. This
+section carries comparison and synthesis questions, so it must be substantive. Missing
+connective tissue is the main way this wiki fails a synthesis question.>
 
-- [[quantization]]  (other main compression method; contrast: lowers numerical precision vs. trains a small student)
-- [[data-synthesis]]  (distillation is one use of synthetic data; boundary: not all synthetic-data training is distillation)
+- [[quantization]]  (contrast: other main model-compression method; lowers numerical precision vs. trains a small student)
+- [[data-synthesis]]  (part-of: distillation is one use of synthetic data; boundary: not all synthetic-data training is distillation)
 
 ## Provenance
 <Which source-summary page(s) this content was drawn from.>
@@ -164,6 +170,27 @@ way this wiki fails a synthesis question.>
 
 `Key figures` and `Related` are the two load-bearing sections. The measurement lives or
 dies on them.
+
+### Related keyword set (closed)
+
+The one place the relationship vocabulary is defined. Ingest picks from it; lint checks
+against it.
+
+- **contrast** — A and B are alternatives or differ in approach.
+- **part-of** — A is a component or subset of B (composition or subsumption).
+- **example-of** — A is a concrete instance of concept B (instantiation).
+- **prerequisite** — A requires or builds on B; understanding or using A needs B.
+- **boundary** — marks where A and B diverge, or where the relationship stops (a caveat).
+- **see-also** — generic relatedness; last resort when none of the above fits.
+
+Design rule for the set: keywords must be **disjoint** — each names a distinct KIND of
+relationship, so there is never a choice between two that both fit. The set's value is
+consistency, and consistency comes from disjointness, not from size. Do NOT add
+near-synonyms (e.g. "differs-from" for contrast) or inverses (e.g. "enables," the inverse
+of prerequisite — put direction in the gloss instead): they reintroduce the drift the
+closed set exists to prevent. Add a keyword only for a genuinely new KIND the corpus
+actually exhibits (warrant), and only by a human editing this list. First warrant
+candidate if it recurs: **evaluates** (A measures or evaluates B).
 
 ---
 
@@ -246,7 +273,12 @@ what makes extraction clean and facts survive.
    placed per the fact-placement rule. Close each claim-cluster with `(LABEL p.NNN)`.
 5. If the section itself draws a cross-cutting comparison, create a `syntheses/` page for
    it — blind, from the source, never targeting an eval question.
-6. Add `Related` links (with reasons) to existing pages, and back-links on those pages.
+6. Add `Related` links to existing pages, and back-links on those pages. Begin each reason
+   with a keyword from the closed set (section 5). If none fits, use the closest existing
+   keyword and append a line to `wiki/_review.md` noting the no-fit; do NOT coin a new
+   keyword (the set is extended only by a human editing section 5). To let the agent also
+   propose a candidate keyword in that flag, add "and suggest a candidate" here — it still
+   may not use the candidate until a human adds it to the set.
 7. Write or update the section's `sources/` page (with its label frontmatter).
 8. Update `index.md`. Append one line to `log.md`.
 
@@ -286,6 +318,7 @@ It checks only:
 - Orphan pages (in `wiki/` but absent from `index.md`, or with no inbound links).
 - Index-vs-disk drift (index lists a missing page, or omits an existing one).
 - Bare `Related` links (a link with no reason).
+- Related reasons whose leading keyword is not in the closed set (section 5).
 - Unresolved citation labels (a `(LABEL p.N)` whose LABEL is not declared on any
   `sources/` page).
 - Probable duplicate pages (near-identical titles or content — the cost of the mechanical
