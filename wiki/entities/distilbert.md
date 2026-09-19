@@ -14,7 +14,8 @@ distillation by finetuning an existing pre-trained model (the Alpaca route). See
 - Reduces BERT's size by 40%, retains 97% of its language comprehension, and is 60% faster (AIE p.395)
 
 ## Related
-- [[model-distillation]] (example-of: the canonical trained-from-scratch student)
+- [[model-distillation]]  (example-of: the canonical trained-from-scratch student)
+- [[alpaca]]  (contrast: trained from scratch vs. finetuned from a pre-trained model)
 
 ## Provenance
 - [[sources/ch08-model-distillation]]

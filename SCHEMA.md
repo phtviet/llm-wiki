@@ -93,18 +93,42 @@ the split isolates what the synthesis layer is worth.
 
 ## 4. Page-creation rules (granularity and placement)
 
-Apply these two rules in order. Sequencing them resolves the conflict between them.
+Apply these rules in order. The entity bar and the concept bar decide what earns a page;
+fact-placement then decides where figures go.
 
-**Entity bar (apply first).** A thing earns its own entity page when the ingested
-section gives it a definition and at least one distinct attribute or figure of its own.
-Judge on the section's material only, never on whether an eval question needs it. Things
-below the bar appear as inline mentions on the relevant concept page.
+**Entity bar (apply first).** An entity earns its own page when the section **defines it
+in its own right** — when the section is, in part, about that thing. A thing named only
+to explain another entity stays an inline mention on that entity's page, even if it
+carries a stray figure. Judge on the section's material only, never on whether an eval
+question needs it.
 
-Chosen calibration: the **mechanical** bar above, which is what an agent can apply from
-the section in front of it. It does proliferate pages (e.g. both Alpaca and Nemotron-4
-earn pages, not just DistilBERT). That is accepted: storage is a non-issue, and the cost
-that does scale (index length) is a routing concern for the daily-use fork, not this
-build.
+Example: DistilBERT, Alpaca, and Nemotron-4 each earn a page (the section describes each
+as a model in its own right). Mixtral-8x7B stays a mention on the Nemotron page, since it
+is named only to explain what generated Nemotron's training data; its lone figure (56B
+parameters) rides inline there.
+
+Why this and not a purely mechanical "definition plus any figure" bar: the mechanical
+version over-produced thin pages that existed only because a passing mention carried a
+number. Requiring the section to be *about* the entity keeps pages to things with
+independent content. Two consequences are accepted deliberately. First, a sliver of
+judgment on middle cases (an entity a section spends a sentence or two on in service of a
+larger point): such a case may spawn a page on one run and not another, and that variance
+is fine — an occasional extra page is cheaper than either constant cleanup or systematic
+gaps. Second, a page never created is a page that never needs merging later, so this bar
+disproportionately suppresses the passing-mention entities most likely to recur across
+future sources, cutting merge load in the daily-use fork without losing content a query
+can still reach via the host page.
+
+**Promotion (daily-use fork, not this build).** A mention becomes its own page later only
+when a source defines the entity in its own right. Until then it stays inline. This
+defers a page, it does not forbid one.
+
+**Concept bar (apply first, alongside the entity bar).** A concept earns its own page
+only when the section **defines or substantively develops** it, not when it is merely
+named in passing. A concept named but not developed — a technique that appears only as an
+example, like "such as LoRA" — stays a mention or a link, which may dangle until the
+section that defines it is ingested. Judge on the section's material only. This parallels
+the entity bar and stops thin concept stubs proliferating from passing references.
 
 **Fact-placement (apply second).** An **entity-specific** figure lives on that entity's
 page. A **concept-general** figure lives on the concept page. Because the entity bar ran
@@ -191,6 +215,12 @@ of prerequisite — put direction in the gloss instead): they reintroduce the dr
 closed set exists to prevent. Add a keyword only for a genuinely new KIND the corpus
 actually exhibits (warrant), and only by a human editing this list. First warrant
 candidate if it recurs: **evaluates** (A measures or evaluates B).
+
+### Link mentions
+
+A mention of a linked page may carry a natural attribute or possessive before the link
+(e.g. "NVIDIA's [[nemotron-4]]"). Attributes are optional and not lint-checked, so they
+will vary between pages; that variation is accepted.
 
 ---
 

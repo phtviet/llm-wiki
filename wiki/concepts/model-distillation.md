@@ -11,16 +11,19 @@ has traditionally been to produce smaller models for deployment: deploying a big
 can be resource-intensive, and distillation can yield a smaller, faster student that
 retains performance comparable to the teacher (AIE p.395).
 
-Distillation implies the teacher's performance is the student's gold standard. Training
-a student on a teacher's synthetic outputs to become larger or more capable than the
-teacher (for example NVIDIA's Nemotron-4) is therefore not distillation, which is the
-boundary that separates it from synthetic-data training in general (AIE p.396). A
-practical limit: many model licenses prohibit using a model's outputs to train other,
-especially competing, models, so not all models can be distilled (AIE p.395).
+The student can be trained from scratch (like [[distilbert]]) or finetuned from an
+existing pre-trained model (like [[alpaca]]) (AIE p.395). Distillation implies the
+teacher's performance is the student's gold standard. Training a student on a teacher's
+synthetic outputs to become larger or more capable than the teacher (for example
+NVIDIA's [[nemotron-4]]) is therefore not distillation, which is the boundary that
+separates it from synthetic-data training in general (AIE p.396). A practical limit:
+many model licenses prohibit using a model's outputs to train other, especially
+competing, models, so not all models can be distilled (AIE p.395).
 
 ## Key figures
 None. The concept carries no intrinsic load-bearing figure; the model-specific numbers
-(DistilBERT's 40% / 97% / 60%, Alpaca's 4%) live on the entity pages, per fact-placement.
+(DistilBERT's 40% / 97% / 60%, Alpaca's 4%, Nemotron-4's scale) live on the entity
+pages, per fact-placement.
 
 ## Examples
 - [[distilbert]]  (student trained from scratch; distilled from BERT)
@@ -29,6 +32,8 @@ None. The concept carries no intrinsic load-bearing figure; the model-specific n
 ## Related
 - [[quantization]]  (contrast: other main model-compression method; lowers numerical precision vs. trains a small student)
 - [[data-synthesis]]  (part-of: distillation is a required use of synthetic data, since the student trains on the teacher's generated outputs; boundary: not all synthetic-data training is distillation)
+- [[nemotron-4]]  (boundary: student trained on synthetic teacher outputs but exceeds the teacher, so it is not distillation)
+- [[lora]]  (see-also: synthetic instruction data is commonly paired with adapter-based finetuning like LoRA rather than full distillation)
 
 ## Provenance
 - [[sources/ch08-model-distillation]]
