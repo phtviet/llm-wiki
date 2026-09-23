@@ -29,6 +29,7 @@ None. The concept carries no intrinsic load-bearing figure; the model-specific n
 ## Related
 - [[quantization]]  (contrast: other main model-compression method; lowers numerical precision vs. trains a small student)
 - [[data-synthesis]]  (part-of: distillation is a required use of synthetic data, since the student trains on the teacher's generated outputs; boundary: not all synthetic-data training is distillation)
+- [[nemotron-4]]  (boundary: training a student to surpass its teacher on synthetic data is not distillation, since distillation implies the teacher's performance is the student's gold standard)
 
 ## Provenance
 - [[sources/ch08-model-distillation]]

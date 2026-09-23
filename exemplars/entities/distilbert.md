@@ -15,6 +15,7 @@ distillation by finetuning an existing pre-trained model (the Alpaca route). See
 
 ## Related
 - [[model-distillation]] (example-of: the canonical trained-from-scratch student)
+- [[alpaca]]  (contrast: trained from scratch vs. finetuned from a pre-trained model)
 
 ## Provenance
 - [[sources/ch08-model-distillation]]
