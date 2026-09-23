@@ -1,17 +1,21 @@
 ---
 type: entity
-sources: [ch01-from-large-language-models-to-foundation-models]
+sources: [ch01-three-layers-of-the-ai-stack, ch02-domain-specific-models]
 ---
 # CLIP
 
-CLIP is a language-image model developed by OpenAI (OpenAI, 2021), trained using a variant of self-supervision called natural language supervision: instead of manually generating labels for each image, OpenAI found (image, text) pairs that co-occurred on the internet (AIE p.9). CLIP is not a generative model -- it was not trained to produce open-ended outputs -- but an embedding model, trained to produce joint embeddings of both text and images (AIE p.9). It was the first model able to generalize to multiple image classification tasks without requiring additional training, and it serves as the backbone for generative multimodal models such as Flamingo, LLaVA, and Gemini (AIE p.9).
+CLIP is OpenAI's embedding model trained on 400 million image-text pairs via natural language supervision. It maps images and text into a shared embedding space.
+
+The book uses CLIP (and Open CLIP) benchmark performance across image datasets to illustrate how a model's domain coverage can be inferred from its benchmark results, given the lack of direct domain-distribution analyses for vision data (AIE p.56).
 
 ## Key figures
-- Trained on a dataset of 400 million (image, text) pairs, 400 times larger than ImageNet, gathered without manual labeling cost (AIE p.9)
+- Trained on 400M image-text pairs
+- Accuracy of ViT-B/32 (OpenAI) on benchmarks: ImageNet 63.2, Birdsnap 37.8, Country211 17.8, Oxford 102 Flower 66.7, German Traffic Sign Recognition 32.2, Stanford Cars 59.4, UCF101 64.5 (AIE p.56)
 
 ## Related
-- [[multimodal-model]]  (example-of: a multimodal embedding model, backbone for generative multimodal models)
-- [[self-supervision]]  (example-of: trained via natural language supervision, a self-supervised variant)
+- [[domain-specific-models]]  (example-of: benchmark performance used to infer a general-purpose model's domain coverage)
+- [[foundation-model]]  (part-of: an embedding model built on a foundation-model-scale training set)
 
 ## Provenance
-- [[sources/ch01-from-large-language-models-to-foundation-models]]
+- [[sources/ch01-three-layers-of-the-ai-stack]]
+- [[sources/ch02-domain-specific-models]]
