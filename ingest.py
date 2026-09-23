@@ -21,7 +21,6 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parent
-EXEMPLARS_DIR = ROOT / "exemplars"
 WIKI = ROOT / "wiki"
 SCHEMA_PATH = ROOT / "SCHEMA.md"
 # Set to your current preferred model. Escalate to a stronger model only if calibration
@@ -54,6 +53,23 @@ def build_system(schema: str) -> str:
         "figure of its own here, it gets its own entity page, regardless of whether it plays "
         "a supporting role or whether the exemplars happen to include a similar page. Do not "
         "let an exemplar's restraint suppress a page the bar requires.\n\n"
+        "The CONCEPT bar is strict, and violating it is the most common failure. In "
+        "overview, summary, or list-heavy sections, most named concepts are only NAMED, "
+        "not developed. A concept earns a page ONLY if THIS section actually explains it: "
+        "gives its mechanism, definition, or substantive detail of its own. A concept that "
+        "appears only as an item in a list, a one-line mention, a use-case blurb, or a "
+        "forward reference to a later chapter stays a dangling [[link]], NOT a page. "
+        "Example: a section that lists 'training, finetuning, inference optimization' as "
+        "steps in a workflow without explaining each creates LINKS to them, not pages. "
+        "When unsure, prefer a link over a page. A page for a merely-named concept is a "
+        "failure, not a happy accident.\n\n"
+        "SLUGS: if a concept or entity already appears in the current index, reuse its "
+        "EXACT existing slug and target that same page. Never invent a variant slug "
+        "(e.g. 'evaluation-ch1', 'finetuning-2') for something that already exists.\n\n"
+        "UPDATING: only use action 'update' when THIS section adds substantive new content "
+        "to an existing page. If your section merely mentions or references a concept that "
+        "already has a page, LINK to it and do not rewrite it -- never overwrite a fuller "
+        "existing page with a thinner, passing-mention version.\n\n"
         "Review flags belong ONLY in the top-level review_flags array. NEVER write a "
         "[review_flag: ...] note, or any other flag, aside, or bracketed comment, inside a "
         "page's content. Page content is the finished wiki page a reader sees and must "
@@ -88,7 +104,7 @@ def parse_json(raw: str) -> dict:
     start, end = raw.find("{"), raw.rfind("}")
     if start == -1 or end == -1 or end < start:
         raise ValueError(f"No JSON object found in model output:\n{raw[:800]}")
-    return json.loads(raw[start:end + 1])
+    return json.loads(raw[start:end + 1], strict=False)
 
 
 def merge_index(index_path: Path, entries: list[dict]) -> None:
@@ -126,7 +142,7 @@ def main() -> None:
     if not schema:
         sys.exit(f"SCHEMA.md not found at {SCHEMA_PATH}")
     index_text = read(WIKI / "index.md")
-    exemplars = [(e, read(EXEMPLARS_DIR / e)) for e in args.exemplars]
+    exemplars = [(e, read(WIKI / e)) for e in args.exemplars]
 
     from anthropic import Anthropic  # imported here so --help / tests need no key
     load_dotenv(ROOT / ".env")
