@@ -10,3 +10,6 @@ wheels/
 .venv
 raw/
 .env
+
+#AIE book
+.pdf
