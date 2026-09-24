@@ -1,0 +1,429 @@
+## People and tools
+- [[ai-engineering-versus-full-stack-engineering]] -- how foundation models pull AI engineering toward full-stack development practices
+
+- [[github-copilot]] -- code completion tool; early production success of foundation models, reached $100M ARR in two years
+- [[conversational-bots]] -- AI dialogue applications spanning companionship, customer support, copilots, voice assistants, and game NPCs
+- [[chegg]] -- homework-help company whose share price collapsed after ChatGPT's launch
+- [[ai-exposure-to-occupations]] -- Eloundou et al. measure of how much AI can accelerate an occupation's tasks; fully-exposed occupations include translators, tax preparers, and writers
+- [[foundation-model-use-case-taxonomy]] -- the book's eight-category taxonomy of consumer/enterprise generative AI use cases, alongside AWS, O'Reilly, Deloitte, and Gartner categorizations
+- [[ai-engineering]] -- building applications on top of existing foundation models, driven by general-purpose capabilities, investment growth, and a low entrance barrier
+- [[bert]] -- canonical masked language model (Devlin et al., 2018)
+- [[gpt-4]] -- model behind ChatGPT; illustrates tokenization and vocabulary size
+- [[alexnet]] -- supervised model that started the deep learning revolution, trained on ImageNet
+- [[clip]] -- OpenAI's language-image embedding model, trained via natural language supervision on 400 million image-text pairs
+- [[midjourney]] -- AI image-generation startup; reached $200M ARR at one and a half years old
+- [[instacart]] -- company whose internal prompt marketplace popularized a meeting/Slack summarization prompt template
+- [[model-as-a-service]] -- arrangement where a few well-resourced organizations offer large models for others to use, lowering the barrier to building AI applications
+- [[customer-support-chatbot]] -- the book's running example for measuring an AI application's business impact
+- [[ai-role-in-application]] -- framework (critical/complementary, reactive/proactive, dynamic/static) for how AI functions within a product
+- [[human-in-the-loop]] -- involving humans in AI decision-making, including Microsoft's Crawl-Walk-Run automation framework
+- [[ai-product-defensibility]] -- moats (technology, data, distribution) for standalone AI products built on foundation models
+- [[mit-chatgpt-writing-study]] -- Noy and Zhang (2023) study measuring ChatGPT's effect on time and quality of professional writing tasks
+- [[alphafold]] -- DeepMind's protein structure prediction model, trained on ~100,000 known protein sequences and structures
+- [[open-clip]] -- open replication of CLIP, benchmarked against it across image classification datasets
+- [[llama-2]] -- Meta's transformer model family illustrating architecture dimension scaling
+- [[llama-3]] -- successor Llama family with larger vocabulary and much longer context length
+- [[mamba]] -- state space model scaled to 3B parameters with linear-time inference
+- [[jamba]] -- hybrid transformer-Mamba mixture-of-experts model
+- [[mixtral-8x7b]] -- eight-expert mixture-of-experts model with 46.7B total but 12.9B active parameters per token
+- [[instructgpt]] -- OpenAI's instruction-finetuned model; source of the book's demonstration-data task-distribution example
+- [[laion]] -- non-profit that crowdsourced multilingual demonstration conversations from volunteers
+- [[sentence-transformers]] -- open source model trained specifically to produce embeddings
+- [[cappy]] -- Google's lightweight 360M-parameter reward model scoring responses 0 to 1
+- [[bleurt]] -- reference-based judge scoring candidate-vs-reference response similarity
+- [[prometheus]] -- reference-based judge outputting a 1-5 rubric-based quality score
+- [[pandalm]] -- preference model that picks the better of two responses and explains its rationale
+- [[model-build-versus-buy]] -- the book's seven-axis framework for choosing between commercial model APIs and self-hosting open source models
+- [[bigbench]] -- Google's 2022 collection of 214 language model benchmarks
+- [[helm]] -- Stanford's holistic language model evaluation leaderboard, using mean win rate aggregation
+- [[hugging-face-open-llm-leaderboard]] -- Hugging Face's public model leaderboard, averaging benchmark scores
+- [[lama-benchmark]] -- Meta AI's 2019 factual-probing benchmark for relational knowledge memorized during training
+- [[dotprompt]] -- Google Firebase's .prompt file format for storing versioned, schema-annotated prompts
+- [[swe-agent]] -- GPT-4-based coding agent whose environment is the computer's terminal and file system
+- [[artificial-intelligence-a-modern-approach]] -- Russell and Norvig's 1995 textbook defining AI as the study and design of rational agents
+- [[react-framework]] -- Yao et al.'s interleaved reasoning-and-action agent framework
+- [[reflexion-framework]] -- Shinn et al.'s evaluator/self-reflection agent framework
+- [[retriever]] -- RAG component that indexes and queries external memory to find relevant chunks
+- [[bm25]] -- Okapi BM25, TF-IDF variant normalized by document length; widely used term-based retrieval baseline
+- [[elasticsearch]] -- inverted-index-based term retrieval engine built on Lucene
+- [[faiss]] -- Facebook's vector search library implementing LSH, product quantization, and IVF
+- [[hnsw]] -- hierarchical navigable small world graph-based vector index algorithm
+- [[ann-benchmarks]] -- website benchmarking ANN algorithms on recall, QPS, build time, and index size
+- [[beir]] -- retrieval evaluation harness spanning 14 benchmarks
+- [[adam-optimizer]] -- dominant optimizer for transformer-based models, used in the backpropagation backward pass
+- [[code-llama]] -- Meta's code model family, made from Llama 2 via instruction and long-context finetuning
+- [[goliath-120b]] -- early frankenmerging success, merged from two finetuned Llama 2-70B models' layers
+- [[solar-10-7b]] -- 48-layer model upscaled from a 7B/32-layer base via depthwise scaling
+- [[bloomberggpt]] -- Bloomberg's 50B-parameter finetuned financial model, outperformed by GPT-4-0314 on financial benchmarks
+- [[ultrachat]] -- ChatGPT-generated multi-turn dialogue dataset built from topics and subtopics
+- [[metamath]] -- paraphrase-rewritten MATH/GSM-8K dataset expanded to almost 400,000 examples
+- [[cosmopedia]] -- 25-billion-token synthetic pre-training corpus generated by Mixtral-8x7B-Instruct
+- [[databricks-html-cleaning-example]] -- Databricks' result from stripping HTML/Markdown tokens: 20% accuracy gain, 60% shorter inputs
+- [[public-dataset-resources]] -- the book's list of repositories (Hugging Face, Kaggle, Data.gov, ICPSR, etc.) for finding public datasets
+- [[lima-study]] -- Zhou et al. study showing 1,000 curated examples can rival GPT-4 in 43% of human-judged comparisons
+- [[yi-model-family]] -- model family whose creators found 10K curated instructions beat hundreds of thousands of noisy ones
+- [[gpt-instruction-tuning-comparison-study]] -- Microsoft researchers' 2023 study comparing GPT-3 and GPT-4 generations via verb-noun-pair and response-length distributions
+- [[distilbert]] -- BERT-distilled student trained from scratch; 40% smaller, 97% of comprehension, 60% faster
+- [[alpaca]] -- Llama-7B finetuned on text-davinci-003 outputs; 4% the size of its teacher
+- [[nemotron-4]] -- NVIDIA's 340B model finetuned on Mixtral-generated synthetic data, outperforming its teacher
+- [[alphageometry]] -- DeepMind's Olympiad-level geometry model trained on 100 million template-generated synthetic examples
+- [[gpu]] -- dominant AI accelerator type; thousands of parallel cores, central to AlexNet's training and the deep learning revolution
+- [[tpu]] -- Google's tensor-primitive AI accelerator, co-designed with the transformer architecture
+- [[medusa]] -- NVIDIA-benchmarked parallel decoding technique adding trained multi-token prediction heads to a frozen base model
+- [[flashattention]] -- kernel fusing common transformer operations for faster attention computation on NVIDIA GPUs
+- [[chip-huyen]] -- author of AI Engineering; ML systems writer and engineer, formerly NVIDIA and Snorkel AI
+- [[google-gemini]] -- conversational AI product showing partial side-by-side responses to collect comparative feedback
+- [[google-photos]] -- photo-organization app that asks users for feedback when uncertain about face matches
+## Training fundamentals
+- [[ai-engineering-workflow]] -- product-first iteration workflow enabled by readily available foundation models
+- [[model-adaptation]] -- splits into weight-preserving prompting and weight-updating finetuning
+- [[finetuning]] -- continues training a previously trained model, cheaper than pre-training from scratch
+- [[pre-training]] -- training a model from scratch with randomly initialized weights, the most resource-intensive training phase
+- [[post-training]] -- training after pre-training, conceptually the same as finetuning but usually done by model developers
+- [[dataset-engineering]] -- curating, generating, and annotating data for training and adapting models
+- [[inference-optimization]] -- making models faster and cheaper to run
+- [[model-development]] -- the ML-engineering-adjacent layer covering modeling/training, dataset engineering, and inference optimization
+
+- [[ai-coding]] -- coding as the most popular generative AI use case, with mixed productivity gains by task complexity
+- [[data-organization]] -- foundation-model use case: organizing unstructured/semistructured data (photos, logs, contracts) for search
+- [[intelligent-data-processing]] -- extracting structured information from unstructured data; IDP industry projected at $12.81B by 2030
+- [[ai-in-education]] -- AI personalizing learning materials, tutoring, and quiz generation in education
+- [[language-model]] -- encodes statistical information about language; splits into masked and autoregressive types
+- [[token]] -- basic unit a language model works with; character, word, or word-part
+- [[tokenization]] -- process of breaking text into tokens, method chosen by model developers
+- [[vocabulary]] -- the set of all tokens a model can work with
+- [[masked-language-model]] -- predicts missing tokens using bidirectional context; e.g. BERT
+- [[autoregressive-language-model]] -- predicts the next token from preceding context; today's model of choice for generation
+- [[self-supervision]] -- infers labels from input data itself, overcoming the labeling bottleneck to enable scaling to LLMs
+- [[supervision]] -- training on explicitly labeled data; expensive and slow to scale
+- [[model-parameters]] -- variables updated through training; used to measure model size/scale
+- [[foundation-model]] -- successor to large language models, spanning multiple data modalities and general-purpose task capability
+- [[multimodal-model]] -- model that generates from more than one data modality, e.g. text and images
+- [[information-aggregation]] -- AI use case of filtering, summarizing, and distilling information for consumers and enterprises
+- [[ai-product-maintenance]] -- planning for how an AI product must adapt to AI's fast pace of change, including regulatory and IP risk
+- [[milestone-planning]] -- planning how to reach an AI product's goals, starting from evaluating existing off-the-shelf models' capabilities
+- [[last-mile-challenge]] -- the disproportionate difficulty of going from a working demo to a finished product
+- [[ai-stack]] -- the three-layer AI application stack (application development, model development, infrastructure) and how it evolved with foundation models
+- [[infrastructure]] -- bottom layer of the AI stack; model serving, data/compute management, and monitoring
+- [[workflow-automation]] -- using AI to automate repetitive end-user and enterprise tasks, often requiring tool-using agents
+- [[ai-writing]] -- AI-assisted writing use case, from autocomplete to full drafting, and its abuse in content farms
+- [[domain-specific-models]] -- models curated for narrow tasks (e.g. drug discovery, cancer screening) where general-purpose foundation models underperform
+- [[transformer-architecture]] -- dominant attention-based architecture for language foundation models, successor to seq2seq
+- [[seq2seq]] -- encoder-decoder RNN architecture for sequence tasks, precursor to the transformer
+- [[attention-mechanism]] -- query/key/value mechanism letting a model weigh the importance of prior tokens
+- [[transformer-block]] -- repeated attention + MLP unit that composes a transformer model
+- [[state-space-models]] -- alternative architecture family (S4, H3, Mamba, Jamba) targeting long-sequence modeling
+- [[model-size]] -- how model size is measured via parameters, sparsity, and its interplay with dataset size
+- [[mixture-of-experts]] -- sparse architecture where only a subset of expert parameters activate per token
+- [[dataset-size]] -- measuring training data scale by token count rather than sample count
+- [[flop]] -- FLOP and FLOP/s as standardized measures of training compute and hardware performance
+- [[scaling-law]] -- Chinchilla's rule for compute-optimal model size and dataset size given a compute budget
+- [[inverse-scaling]] -- cases, including alignment training and the Inverse Scaling Prize, where bigger models perform worse
+- [[scaling-extrapolation]] -- predicting optimal hyperparameters for large models from smaller-model studies
+- [[scaling-bottlenecks]] -- training-data exhaustion and electricity as limits on continued model-size growth
+- [[data-restrictions]] -- growing legal and terms-of-service limits on scraping data for AI training
+- [[common-crawl]] -- popular LLM training dataset, heavily skewed toward English (45.88%) over other languages
+- [[low-resource-languages]] -- languages with limited training-data availability, measured by under-representation relative to population
+- [[supervised-finetuning]] -- first post-training step; finetunes on instruction data to optimize for conversation over completion
+- [[preference-finetuning]] -- second post-training step; aligns model outputs with human preference, typically via RL (RLHF, DPO, RLAIF)
+- [[rlhf]] -- earliest successful preference finetuning algorithm; trains a reward model then optimizes the foundation model against it, typically via PPO
+- [[reward-model]] -- scores (prompt, response) pairs; trained on comparison data to guide RLHF optimization
+- [[comparison-data]] -- labeled data of (prompt, winning_response, losing_response) used to train reward models
+- [[best-of-n]] -- sampling multiple outputs and picking the reward-model-preferred one, skipping RL optimization
+- [[sampling]] -- choosing an outcome from a model's computed probability distribution, e.g. picking the next language-model token
+- [[greedy-sampling]] -- always picking the highest-probability outcome; works for classification but makes language-model output boring
+- [[logit-vector]] -- raw per-token network output, one value per vocabulary token, converted to probabilities via softmax
+- [[softmax]] -- function normalizing a logit vector into a probability distribution
+- [[temperature]] -- constant that rescales logits before softmax to trade off creativity against coherence in sampling
+- [[logprobs]] -- log-scale token probabilities exposed by model providers, used for classification, evaluation, and debugging
+- [[top-k-sampling]] -- sampling strategy restricting candidates to the k highest-logit tokens
+- [[top-p-sampling]] -- nucleus sampling; dynamically bounds candidates by cumulative probability
+- [[stopping-condition]] -- rule for ending autoregressive generation early to control latency and cost
+- [[finetuning-for-structure]] -- training a model on examples of the desired format, the most reliable structured-output technique
+- [[demonstration-data]] -- (prompt, response) pairs used to teach a model appropriate conversational behavior, also called behavior cloning
+- [[test-time-compute]] -- generating multiple responses per query at inference time to increase the chance of a good response
+- [[beam-search]] -- strategy generating a fixed set of most-promising candidates at each sequence-generation step
+- [[self-consistency]] -- selection method picking the most common output among multiple samples
+- [[probabilistic-nature-of-ai]] -- why sampled AI outputs vary rather than being fixed, and how it drives inconsistency and hallucination
+- [[training-data-curation]] -- curating training data for quality and domain/language alignment, since a model is only as good as its training data
+- [[embedding]] -- numerical vector representation capturing the meaning of data; typically 100-10,000 dimensions
+- [[open-source-models]] -- distinguishes open weight (public weights only) from open model (public weights and data), and why the terms get conflated
+- [[model-licenses]] -- what model licenses govern: commercial use, usage caps, and whether outputs can train other models
+- [[model-api]] -- the user-facing interface to a model's inference service, offered by providers, clouds, and third parties
+- [[inference-service]] -- the service that hosts and runs a model to answer queries, exposed via a model API
+- [[agent]] -- anything that perceives and acts upon its environment, characterized by its environment and its set of tools/actions
+- [[compound-mistakes]] -- how per-step error rates compound over multi-step agent tasks, driving the need for more powerful models
+- [[kitty-vogue-sql-agent-example]] -- worked example of an agent planning, generating, and executing SQL queries to answer a sales-projection query
+- [[memory]] -- mechanisms (internal knowledge, short-term, long-term) letting a model retain and utilize information across a task or conversation
+- [[internal-knowledge]] -- a model's own trained-in knowledge, changeable only by retraining or finetuning
+- [[short-term-memory]] -- a model's context window used as fast, capacity-limited memory for the current task
+- [[long-term-memory]] -- externally retrieved data serving as persistent, deletable memory, as in RAG
+- [[memory-management]] -- add/delete strategies (FIFO, summarization, reflection) for what a memory system stores
+- [[planning]] -- decomposing an agent task into a validated, executable roadmap of actions
+- [[plan-generation]] -- producing a plan via prompting, including parameter guessing and hallucination risk
+- [[function-calling]] -- invoking declared tools via a model API, with required/none/auto tool-use settings
+- [[planning-granularity]] -- how detailed or high-level a plan is, and exact-function-name vs. natural-language plan steps
+- [[control-flow]] -- sequential, parallel, if-statement, and for-loop orderings of a plan's actions
+- [[reflection-and-error-correction]] -- evaluating and correcting plans and outcomes; ReAct and Reflexion frameworks
+- [[tool-selection]] -- choosing an agent's tool inventory via ablation, transition analysis, and usage distribution
+- [[reinforcement-learning-versus-foundation-model-planners]] -- contrasts how RL agents and FM agents build their planners
+- [[rag-architecture]] -- two-component retriever/generator design underlying retrieval-augmented generation systems
+- [[multimodal-rag]] -- augmenting a query's context with images, video, or audio alongside text, via a shared multimodal embedding model like CLIP
+- [[rag-with-tabular-data]] -- augmenting context with structured table data via text-to-SQL, SQL execution, and generation
+- [[rag]] -- retrieval-augmented generation; constructs query-specific context from external memory sources, contrasted with agentic tool use
+- [[agent]] -- entity that perceives and acts on its environment; here introduced as the agentic pattern using tools to gather context and act in the world
+- [[context-construction]] -- gathering task-relevant information for a query, via retrieval or web search, analogous to feature engineering
+- [[term-based-retrieval]] -- lexical/keyword retrieval ranking documents by term frequency and inverse document frequency
+- [[tf-idf]] -- term frequency-inverse document frequency scoring formula for term-based retrieval
+- [[embedding-based-retrieval]] -- semantic retrieval ranking documents by embedding similarity to the query
+- [[vector-database]] -- stores and searches vectors/embeddings via exact or approximate nearest-neighbor algorithms
+- [[hybrid-search]] -- combines term-based and embedding-based retrieval in sequence or as a parallel ensemble
+- [[reciprocal-rank-fusion]] -- algorithm merging multiple retrievers' rankings into one final ranking
+- [[chunking-strategy]] -- splitting documents into retrieval-sized chunks, trading off chunk size against context loss and computational overhead
+- [[reranking]] -- reordering retrieved documents for accuracy, by cost/precision tradeoff or by recency
+- [[query-rewriting]] -- rewriting an ambiguous user query into a self-contained one before retrieval
+- [[contextual-retrieval]] -- augmenting chunks with metadata, questions, or generated situating context to improve retrieval
+- [[retrieval-solution-evaluation]] -- operational factors (mechanisms, scalability, latency, pricing) for choosing a retrieval solution
+- [[tool-inventory]] -- the set of tools an agent has access to, spanning knowledge augmentation, capability extension, and write actions
+- [[knowledge-augmentation]] -- tool category that augments an agent's context with private data or web browsing
+- [[capability-extension]] -- tool category addressing model limitations, e.g. calculators, code interpreters, and multimodal tool use
+- [[write-actions]] -- tool actions that change a data source, enabling automation but raising trust and safety risks
+- [[backpropagation]] -- forward/backward pass training mechanism that computes gradients and updates trainable parameters
+- [[trainable-parameters]] -- parameters updatable during finetuning, whose gradients and optimizer states drive memory footprint
+- [[finetuning-versus-rag]] -- synthesis contrasting finetuning (form) and RAG (facts) as adaptation strategies, and when to combine them
+- [[ovadia-et-al-finetuning-vs-retrieval-study]] -- 2024 study showing RAG outperforms finetuning on current-events QA and MMLU across three models
+- [[model-adaptation-workflow]] -- the book's staged process moving from prompting to RAG to finetuning based on observed failure modes
+- [[transfer-learning]] -- transferring knowledge from one task to accelerate learning on a new, related task; finetuning is one method
+- [[sample-efficiency]] -- a model's ability to learn from fewer examples, the practical payoff of transfer learning
+- [[feature-based-transfer]] -- alternative to finetuning that reuses extracted features (embeddings) in another model, common in computer vision
+- [[self-supervised-finetuning]] -- continued pre-training on cheap task-related unlabeled data before expensive supervised finetuning
+- [[infilling-finetuning]] -- finetuning a model to fill in blanks using both preceding and following context
+- [[long-context-finetuning]] -- finetuning technique extending a model's maximum context length, harder than other finetuning types
+- [[finetuning-development-path]] -- OpenAI's progression and distillation paths for choosing and iterating on finetuning base models
+- [[finetuning-frameworks-and-methods]] -- practical choice of finetuning API vs. framework, and method choice by data volume and serving needs
+- [[finetuning-hyperparameters]] -- overview of the recurring hyperparameters tuned during finetuning
+- [[learning-rate]] -- step size controlling how fast model parameters change per training step
+- [[batch-size]] -- number of examples learned from per training step, limited by hardware memory
+- [[gradient-accumulation]] -- accumulating gradients across batches to stabilize updates under small batch sizes
+- [[epoch]] -- one full pass over training data; how many passes a model needs depends on dataset size
+- [[prompt-loss-weight]] -- hyperparameter controlling how much prompt tokens vs. response tokens contribute to training loss
+- [[peft]] -- parameter-efficient finetuning; dominant memory-efficient approach to adapting model weights, evolving into adapter-based techniques
+- [[inference-memory-calculation]] -- formula for approximating a model's inference memory footprint from parameter count and bytes per parameter
+- [[training-memory-calculation]] -- formula for approximating a model's training memory footprint, including gradients and optimizer states
+- [[gradient-checkpointing]] -- recomputing activations instead of storing them to reduce training memory, at the cost of extra compute time
+- [[model-merging]] -- combining multiple models' parameters into one, as an alternative or complement to finetuning, including its use for multi-task finetuning and on-device deployment
+- [[model-merging-summing]] -- merging by adding constituent models' weights (linear combination, SLERP) with optional task-vector pruning
+- [[model-merging-layer-stacking]] -- merging by stacking layers from different models (frankenmerging), used for MoE sparse upcycling and model upscaling
+- [[model-merging-concatenation]] -- merging by concatenating parameters, e.g. summing LoRA adapter ranks; not recommended since it doesn't reduce memory
+- [[full-finetuning]] -- updates every model parameter starting from pre-trained weights; memory- and data-intensive
+- [[partial-finetuning]] -- updates only a subset of parameters (e.g. later layers); reduces memory but is parameter-inefficient
+- [[lora]] -- Low-Rank Adaptation; decomposes weight matrices into trainable low-rank factors, the dominant PEFT technique
+- [[qlora]] -- quantized LoRA storing weights in 4-bit NF4, enabling 65B-parameter finetuning on a single 48GB GPU
+- [[reasons-not-to-finetune]] -- why many finetuning benefits are achievable without it, and the up-front costs and risks that argue for prompting first
+- [[reasons-to-finetune]] -- quality improvement, task-specific adaptation, bias mitigation, and small-model advantages that motivate finetuning
+- [[when-to-finetune]] -- why finetuning is generally attempted only after extensive prompt-based experimentation, given its higher resource cost
+- [[data-synthesis]] -- using AI models to generate training data, from simulation and paraphrasing to instruction-data synthesis
+- [[self-play]] -- AI generating training data by playing against itself, used for Dota 2 and AlphaGo
+- [[model-collapse]] -- irreversible model degradation from recursive training on synthetic data
+- [[superficial-imitation]] -- risk that a student mimics a teacher's style without gaining its underlying capability
+- [[data-verification]] -- checking synthetic data quality via functional correctness, AI judges, and heuristic filters
+- [[data-cleaning-and-filtering]] -- removing formatting tokens, policy-violating data, and low-quality data from training datasets
+- [[data-acquisition]] -- gathering data via sourcing, purchasing, annotating, and synthesizing to meet dataset quality and diversity needs
+- [[data-flywheel]] -- using a product's own user-generated data to continually improve it, the ideal training-data source
+- [[data-annotation]] -- labeling data for finetuning, and the difficulty of writing clear annotation guidelines
+- [[data-augmentation]] -- creates new data from existing real data (e.g. flipping an image), contrasted with data synthesis
+- [[artificial-data-generation-history]] -- history of fake-data generation for software testing, and its expansion via AI into sophisticated synthetic data
+- [[data-coverage]] -- data diversity requirement that training data span the range of problems and expressions users present
+- [[training-data-format-by-task]] -- what data format each training task (self-supervised, instruction, preference, reward-model) requires
+- [[chain-of-thought-data]] -- training data containing step-by-step reasoning responses, harder to produce than direct-answer data
+- [[tool-use-data]] -- training data teaching a model to use tools, often synthesized rather than human-annotated
+- [[turn-based-data-curation]] -- choosing single-turn vs. multi-turn conversational training data
+- [[data-curation-criteria]] -- the three data curation criteria (quality, coverage, quantity) and removing bad data to unlearn behaviors
+- [[data-processing-efficiency]] -- practical tips for ordering, trialing, and safely applying data processing steps at scale
+- [[data-quality]] -- six characteristics (relevant, aligned, consistent, correctly formatted, unique, compliant) that make finetuning data high-quality
+- [[data-quantity]] -- how much data finetuning needs, driven by finetuning technique, task complexity, and base model performance
+- [[ossification]] -- pre-training freezing model weights so they resist adapting to finetuning data
+- [[progressive-finetuning-strategy]] -- finetuning first on lower-quality or less-relevant data before high-quality target data
+- [[finetuning-data-diversity]] -- how diversity of finetuning tasks, topics, and formats affects model performance
+- [[data-centric-versus-model-centric-ai]] -- synthesis contrasting improving AI via better models vs. via better data, illustrated by DataComp and Andrew Ng's 2021 competition
+- [[data-deduplication]] -- removing duplicated training examples to prevent distribution skew, test-set contamination, and performance degradation
+- [[finetuning-data-format]] -- formatting training data (instruction, response; chat templates) to match what a finetuned model expects at inference
+- [[data-inspection]] -- manually examining raw datasets via distributional statistics, re-annotation checks, and duplicate detection before training
+- [[rule-based-data-synthesis]] -- generating data from predefined templates and random generators, e.g. synthetic transactions and AlphaGeometry's math problems
+- [[simulation-data-synthesis]] -- generating training data by running experiments in virtual environments instead of the real world
+- [[perturbation]] -- adding noise to existing data to generate new data, improving robustness or exposing misclassification vulnerabilities
+- [[data-synthesis]] -- using AI models to generate training data; five reasons: quantity, coverage, quality, privacy mitigation, and model distillation
+- [[simplest-ai-architecture]] -- the baseline query-to-model-API-to-response pipeline that a full AI architecture progressively extends
+- [[ai-pipeline-orchestration]] -- orchestrator that defines an AI system's components and chains them into an end-to-end pipeline
+- [[model-gateway]] -- tooling that simplifies adding a model as a pipeline component
+- [[router]] -- component that directs queries to specialized models, tools, or actions via an intent classifier or next-action predictor
+## Evaluation
+- [[application-development]] -- the differentiation layer covering evaluation, prompt engineering, and AI interface
+- [[evaluation]] -- assessing models and applications, harder for open-ended foundation-model outputs
+
+- [[gemini-mmlu-prompting-comparison]] -- the book's Gemini-vs-ChatGPT MMLU example showing prompting technique swings evaluation results
+- [[usefulness-threshold]] -- clear expectation of how good a product must be before launch, spanning quality, latency, cost, and other metrics
+- [[multilingual-performance-gap]] -- documented gap in foundation-model quality, speed, and cost across languages, especially low-resource ones
+- [[model-robustness]] -- how much a model's outputs change under small input variations; determines the payoff of sampling multiple outputs
+- [[inconsistency]] -- model producing very different responses for the same or slightly different prompts, and mitigations for it
+- [[hallucination]] -- model output not grounded in facts, with two competing explanatory hypotheses
+- [[ai-as-a-judge]] -- using an AI model (an AI judge) to evaluate other AI models' outputs, practical since GPT-3 in 2020
+- [[bits-per-character]] -- per-character normalization of a language model's cross entropy, correcting for differing tokenization
+- [[bits-per-byte]] -- standardized bits-per-byte metric derived from BPC, indicating a model's text-compression efficiency
+- [[comparative-evaluation]] -- ranking models by pairwise comparison; scalability, standardization, and relative-vs-absolute-performance challenges
+- [[lmsys-chatbot-arena]] -- crowdsourced public leaderboard pairing anonymized models for user voting
+- [[challenges-of-evaluating-foundation-models]] -- why foundation models are harder to evaluate than traditional ML models: intelligence, open-endedness, black-box opacity, benchmark saturation, and expanding scope
+- [[benchmark-saturation]] -- when a model achieves a perfect score on a benchmark, rendering it no longer useful; GLUE, NaturalInstructions, and MMLU all saturated and were replaced
+- [[cross-entropy]] -- measures how difficult it is for a language model to predict what comes next in a dataset, decomposed into training-data entropy plus KL divergence
+- [[entropy]] -- information-theoretic measure of how much information a token carries; basis for cross-entropy, perplexity, BPC, and BPB
+- [[perplexity]] -- language modeling metric closely related to cross-entropy, BPC, and BPB; each derivable from the others
+- [[evaluation-driven-risk-mitigation]] -- why evaluation matters: real-world AI failures, and framing evaluation around identifying likely failure points
+- [[exact-evaluation]] -- evaluation producing unambiguous judgment (e.g. multiple-choice correctness), contrasted with subjective evaluation like essay grading or AI-as-a-judge
+- [[functional-correctness]] -- evaluating whether a system performs its intended functionality, automatable for tasks with measurable objectives like code generation
+- [[pass-at-k]] -- metric scoring code generation by whether any of k generated samples passes all test cases for a problem
+- [[humaneval]] -- OpenAI's functional-correctness code-generation benchmark
+- [[mbpp]] -- Google's Mostly Basic Python Problems Dataset, a functional-correctness code-generation benchmark
+- [[mteb]] -- Massive Text Embedding Benchmark, measuring embedding quality across multiple tasks
+- [[criteria-ambiguity]] -- lack of standardization across AI-judge criteria; MLflow, Ragas, and LlamaIndex score the same faithfulness criterion incompatibly
+- [[ai-judge-bias]] -- self-bias, first-position bias, and verbosity bias that distort AI-judge scores
+- [[ai-judge-cost-and-latency]] -- the API cost multiplication and latency trade-offs of using AI models as judges
+- [[perplexity]] -- language modeling metric measuring predictive difficulty; affected by data structure, vocabulary size, and context length; used for capability proxying, contamination detection, and deduplication
+- [[pointwise-evaluation]] -- scoring each model independently and ranking by score, contrasted with comparative evaluation
+- [[reference-based-evaluation]] -- evaluating AI outputs against reference data via evaluator judgment, exact match, lexical similarity, or semantic similarity
+- [[exact-match]] -- scoring a response correct only if it matches a reference response exactly (or contains it), suited to short-answer tasks
+- [[lexical-similarity]] -- scoring surface-level text overlap via edit distance or n-gram overlap (BLEU, ROUGE, etc.)
+- [[semantic-similarity]] -- scoring closeness in meaning via embeddings and cosine similarity
+- [[preference-model]] -- specialized AI judge predicting which response users prefer, cheaper than collecting human preference signals
+- [[judge-model-selection]] -- tradeoffs of choosing a judge stronger, weaker, or the same as the model being judged
+- [[self-evaluation]] -- using a model to judge and critique its own output, useful for sanity checks and self-revision
+- [[specialized-ai-judges]] -- AI judges trained for specific judgments: reward models, reference-based judges, preference models
+- [[cost-and-latency]] -- balancing model quality against cost and latency, including Pareto optimization and API vs. self-hosted cost structures
+- [[model-selection-criteria-table]] -- worked example table pairing evaluation criteria with metrics, benchmarks, hard requirements, and ideal targets
+- [[domain-specific-capability]] -- evaluation criterion measuring how well a model understands a target domain, constrained by architecture and training data
+- [[multiple-choice-evaluation]] -- close-ended evaluation approach using multiple-choice questions, dominant in public benchmarks but limited to knowledge/reasoning, not generation
+- [[mmlu]] -- UC Berkeley's multiple-choice benchmark; worked example of domain-knowledge evaluation
+- [[bird-sql]] -- text-to-SQL benchmark scoring both execution accuracy and runtime efficiency
+- [[evaluation-driven-development]] -- defining evaluation criteria before building an application, by analogy to test-driven development
+- [[natural-language-generation]] -- NLP subfield studying open-ended text generation; origin of fluency and coherence as evaluation metrics
+- [[factual-consistency]] -- whether model output is grounded in facts, verified locally against context or globally against open knowledge
+- [[textual-entailment]] -- NLI task classifying a hypothesis against a premise as entailment, contradiction, or neutral
+- [[safety]] -- umbrella term for harmful model outputs, spanning toxicity, hate speech, violence, stereotypes, and bias
+- [[truthfulqa]] -- benchmark of 817 questions across 38 categories for factual consistency, with its GPT-judge scorer
+- [[realtoxicityprompts]] -- 100,000-prompt benchmark of prompts likely to elicit toxic generations
+- [[bold-benchmark]] -- benchmark measuring bias in open-ended language generation
+- [[instruction-following-capability]] -- how well a model does what it's told, distinct from domain-specific and generation capability
+- [[ifeval]] -- Google benchmark of 25 automatically verifiable formatting instruction types
+- [[infobench]] -- broader instruction-following benchmark covering content, linguistic, and style criteria via yes/no questions
+- [[roleplaying]] -- asking a model to assume a persona, evaluated on style and knowledge fidelity
+- [[hard-and-soft-attributes]] -- distinguishes attributes impossible/impractical to change from ones that can be improved, guiding model filtering
+- [[model-selection-workflow]] -- four-step iterative process for filtering, benchmarking, experimentally evaluating, and monitoring candidate models
+- [[model-selection]] -- evaluating models against application-specific criteria via a two-step best-performance/cost-performance process
+- [[evaluation-harness]] -- tool for running a model across many benchmarks at once, e.g. lm-evaluation-harness and OpenAI evals
+- [[benchmark-selection-and-aggregation]] -- how public leaderboards choose which benchmarks to include and how to combine scores into a ranking
+- [[data-contamination]] -- when a model is trained on the data it's evaluated on, inflating scores; detection via n-gram overlap and perplexity
+- [[component-level-evaluation]] -- evaluating each component of a multi-step AI system independently, not just the end-to-end output
+- [[turn-based-versus-task-based-evaluation]] -- distinguishes scoring each conversational output from scoring whether a system completes a task
+- [[twenty-questions-benchmark]] -- BIG-bench task-based benchmark where one model instance guesses a concept via yes/no questions to another
+- [[evaluation-guideline]] -- creating an unambiguous specification of good/bad responses: criteria, scoring rubrics, and tying metrics to business impact
+- [[slice-based-evaluation]] -- separating evaluation data into subsets to catch biases, debug weaknesses, and avoid Simpson's paradox
+- [[simpsons-paradox]] -- when a model beats another in aggregate but loses on every data subgroup
+- [[evaluation-set-sizing]] -- how many evaluation examples are needed for reliable, affordable results, via bootstrapping and OpenAI's sample-size rule
+- [[evaluation-pipeline-reliability]] -- checking whether an evaluation pipeline gives the right signals, is reproducible, and its metrics aren't redundant
+- [[agent-failure-modes]] -- the three categories of agent-specific evaluation failure: planning, tool execution, and efficiency
+- [[planning-failures]] -- agent planning errors: invalid tools, bad parameters, goal failure, and reflection errors, with evaluation metrics
+- [[tool-failures]] -- agent failures where the right tool is used but its output or translation is wrong, or the tool is missing entirely
+- [[agent-efficiency]] -- evaluating an agent's steps, cost, and time per task against a baseline
+- [[retrieval-quality-metrics]] -- context precision and recall for evaluating retriever quality
+- [[conversational-feedback]] -- explicit and implicit feedback extracted from user conversations, used for evaluation, development, and personalization
+- [[natural-language-feedback]] -- feedback inferred from message content: early termination, error correction, complaints, sentiment, refusal rate
+- [[other-conversational-feedback]] -- feedback inferred from user actions: regeneration, conversation organization, length, dialogue diversity
+- [[feedback-design]] -- when and how to collect user feedback throughout the user journey, without disrupting workflow
+- [[feedback-biases]] -- systematic biases in user feedback (leniency, randomness, position, preference) that must be designed around
+- [[degenerate-feedback-loop]] -- self-reinforcing loop where a model's predictions shape the feedback that trains its next iteration, amplifying bias
+- [[observability]] -- instrumenting a system so its internal state can be inferred from external outputs; stronger than monitoring
+- [[monitoring]] -- tracking a system's external outputs to catch failures, security attacks, and drifts
+- [[metrics-for-monitoring]] -- format, quality, safety, feedback, latency, and cost metrics tracked in production
+- [[logs-and-traces]] -- append-only event records and reconstructed request timelines used to debug production issues
+- [[drift-detection]] -- catching system prompt, user behavior, and underlying model changes over time
+- [[guardrails]] -- input/output mechanisms that mitigate risk, categorized into guardrails on inputs and on model outputs
+- [[input-guardrails]] -- protects against leaking private data to external APIs and executing malicious prompts, via sensitive-data detection and PII masking/unmasking
+- [[output-guardrails]] -- catches quality and security failures in model output and specifies handling policy, via retries, parallel sampling, and human fallback
+- [[user-feedback]] -- user feedback's dual role (evaluation and development) and its heightened importance as proprietary data in AI applications
+## Prompt engineering
+- [[prompt-engineering]] -- adapting model behavior via input alone, without changing weights
+
+- [[structured-outputs]] -- getting models to generate machine-readable, format-conforming outputs, needed for semantic parsing and downstream parsing
+- [[prompting-for-structure]] -- instructing a model to follow an output format, optionally checked by a second validating query
+- [[post-processing]] -- cheap scripted correction of a model's near-correct output; LinkedIn's YAML parser example
+- [[constrained-sampling]] -- filters the logit vector during generation to keep only tokens meeting a format grammar
+- [[prompt-decomposition]] -- breaking a complex task into chained subtask prompts (e.g. intent classification then response generation), trading off performance, cost, and latency
+- [[context-length]] -- the maximum information a model can accept in a prompt, and how fast that limit has grown across model generations
+- [[needle-in-a-haystack-test]] -- test inserting a random needle into a long prompt to evaluate how well a model uses different positions in its context
+- [[prompt-attacks]] -- attempts to manipulate model behavior via crafted input; defended at model, prompt, and system levels
+- [[violation-rate-and-false-refusal-rate]] -- paired metrics measuring successful attacks vs. over-cautious refusals
+- [[instruction-hierarchy]] -- OpenAI's four-level priority scheme (system, user, model, tool) for training LLMs to resist prompt injection
+- [[prompt-extraction]] -- prompt attack extracting an application's system prompt to replicate or exploit it
+- [[jailbreaking-and-prompt-injection]] -- prompt attack getting the model to do bad things by bypassing constraints
+- [[information-extraction]] -- prompt attack getting the model to reveal training data or context information
+- [[prompt-attack-risks]] -- risks posed by prompt attacks, from remote code execution to brand-damaging outputs
+- [[prompt-engineering-tools]] -- tools that automate or assist prompt engineering, and the hidden-cost and reliability risks of using them
+- [[promptbreeder]] -- DeepMind's evolutionary-strategy AI-powered prompt optimization tool
+- [[chain-of-thought-prompting]] -- prompting technique asking a model to think step by step, improving benchmark performance and reducing hallucinations
+- [[self-critique-prompting]] -- asking a model to check its own outputs, also known as self-eval
+- [[in-context-learning]] -- teaching a model behavior via prompt examples alone, without updating weights
+- [[few-shot-learning]] -- in-context learning using example shots in the prompt
+- [[zero-shot-learning]] -- in-context learning with no example shots
+- [[prompt-versus-context]] -- the book's distinction between the full model input (prompt) and task-relevant information (context)
+- [[information-extraction]] -- prompt attack extracting training data or context via a model's conversational interface, motivated by data theft, privacy violation, and copyright infringement
+- [[prompt-structure]] -- the three compositional parts of a prompt (task description, examples, the task), and how their ordering affects model performance
+- [[dan-jailbreak]] -- early roleplaying jailbreak prompt telling the model to 'do anything now,' free of its usual rules
+- [[pair-jailbreak-method]] -- Chao et al.'s AI-powered attacker/target refinement loop for automated jailbreaking, often under twenty queries
+- [[prompt-organization-and-versioning]] -- separating prompts from code for reusability, testing, readability, and collaboration, plus metadata and versioning practices
+- [[prompt-catalog]] -- versioning system letting applications pin different prompt versions independently of code
+- [[proprietary-prompts]] -- why teams treat prompts as valuable IP despite prompts being more liability than advantage
+- [[reverse-prompt-engineering]] -- deducing an application's system prompt by analyzing outputs or tricking the model into repeating it
+- [[context-construction]] -- gathering necessary context for a query, via retrieval or web search, to improve responses and mitigate hallucination
+- [[restricting-model-to-context]] -- techniques for limiting a model to answer only from provided context, common in roleplaying
+- [[system-prompt-and-user-prompt]] -- splitting a prompt into task-description (system) and task (user) portions, and why system prompts can boost performance
+- [[chat-template]] -- model-developer-defined format for combining system and user prompts into one final prompt, with Llama 2 vs. Llama 3 examples
+- [[clear-and-explicit-instructions]] -- best practices for unambiguous instructions, personas, examples, and output-format specification
+## Model compression
+
+- [[memory-bottleneck]] -- why finetuning's memory footprint exceeds inference's, driven by parameter count, trainable parameters, and numerical precision
+- [[quantization]] -- converting a model to fewer bits per weight to cut memory footprint; 13B-parameter FP32-to-2-byte example halves weight memory
+- [[mixed-precision-training]] -- training with some operations in higher precision and others in lower precision, since training is more precision-sensitive than inference
+- [[numerical-representations]] -- floating point and integer formats (FP32, FP16, BF16, TF32, INT8/INT4) and their range/precision tradeoffs
+- [[fp32]] -- 32-bit single precision IEEE 754 float format, default for NumPy/pandas but memory-heavy for neural networks
+- [[fp16]] -- 16-bit half precision float format; out-of-bound values round to infinity
+- [[bf16]] -- Google's TPU-optimized 16-bit format trading precision for wider range than FP16
+- [[tf32]] -- NVIDIA's GPU-optimized 19-bit format named for functional compatibility with FP32
+- [[int8-int4]] -- 8-bit and 4-bit integer (fixed point) numerical formats
+- [[quantization-aware-training]] -- training-time technique simulating low-precision behavior so a model performs well when quantized for inference
+- [[bitnet-b1-58]] -- Microsoft's 1.58-bit-per-parameter transformer language model, performance comparable to 16-bit Llama 2 up to 3.9B parameters
+- [[model-distillation]] -- trains a small student model to mimic a larger teacher, distinct from general synthetic-data training
+- [[ai-accelerator]] -- chip designed to accelerate AI workloads; GPUs dominate, with CPUs, TPUs, and other specialized chips as alternatives
+- [[computational-capabilities]] -- measuring accelerator compute via FLOP/s and how numerical precision affects it
+- [[accelerator-memory-hierarchy]] -- the three memory levels (CPU DRAM, GPU HBM, on-chip SRAM) an accelerator interacts with
+- [[power-consumption]] -- accelerator energy use, transistor counts, and the maximum-power-draw/TDP distinction
+- [[inference-optimization-levels]] -- the three levels (model, hardware, service) at which inference can be optimized, illustrated via an archery analogy
+- [[inference-server]] -- production component that hosts models and executes inference requests, part of a broader inference service
+- [[computational-bottlenecks]] -- compute-bound vs. memory bandwidth-bound classification of inference workloads, via arithmetic intensity and roofline charts
+- [[prefill-and-decode]] -- the two-step (compute-bound prefill, memory bandwidth-bound decode) inference process for transformer language models
+- [[inference-latency]] -- user-facing latency decomposed into TTFT and TPOT, and why percentiles beat averages
+- [[throughput-and-goodput]] -- tokens/s service throughput versus goodput, the fraction of requests meeting a latency SLO
+- [[utilization-metrics]] -- GPU utilization versus MFU and MBU as measures of compute and bandwidth efficiency
+- [[batching]] -- service-level inference optimization grouping simultaneous requests; static, dynamic, and continuous variants
+- [[prompt-caching]] -- reuses cached overlapping prompt segments (e.g. system prompts) to cut latency and cost
+- [[parallelism-strategies]] -- replica, tensor, pipeline, context, and sequence parallelism for serving models across devices
+- [[pruning]] -- removes or zeroes least-useful parameters to shrink or sparsify a model; less common in practice than quantization or distillation
+- [[autoregressive-decoding-bottleneck]] -- why one-token-at-a-time generation is slow and expensive, and the family of techniques addressing it
+- [[speculative-decoding]] -- draft model proposes tokens, target model verifies them in parallel, to speed up autoregressive generation
+- [[inference-with-reference]] -- copies draft tokens from the input context instead of generating them, for high-overlap tasks like retrieval and coding
+- [[parallel-decoding]] -- generates multiple future tokens simultaneously and verifies/integrates them, as in Lookahead decoding and Medusa
+- [[kv-cache]] -- stores key/value vectors across decoding steps to avoid recomputation; grows linearly with sequence length and batch size
+- [[attention-mechanism-optimization]] -- redesigning attention, optimizing KV cache, and writing kernels to make attention cheaper at inference
+- [[kernel]] -- hardware-specialized code for compute-intensive routines like attention and matrix multiplication
+- [[compiler]] -- tool that lowers model code into hardware-specific instructions and kernels
+- [[system-caching]] -- applying software-caching ideas (exact and semantic caching) to AI applications to cut latency and cost
+- [[exact-caching]] -- reuses cached results only for identical requests; eviction policies and data-leak risks
+- [[semantic-caching]] -- reuses cached results for semantically similar requests via embedding similarity search
