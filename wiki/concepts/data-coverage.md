@@ -10,7 +10,7 @@ Which dimensions of diversity matter depends on the application: a French-to-Eng
 
 Diversity is not an unqualified good: 'The Data Addition Dilemma' (Shen et al., 2024) found that adding more heterogeneous data can in some cases worsen performance (AIE p.369). An experiment by Zhou et al. (2023) trained a 7B-parameter model on three 2,000-example datasets -- high-quality-but-not-diverse, diverse-but-low-quality, and both diverse-and-high-quality -- and found the both-diverse-and-high-quality dataset produced the best generation quality, showing quality and diversity compound rather than substitute for each other (AIE p.371).
 
-One consistent diversity axis across pre-training, supervised finetuning, and preference finetuning is domain diversity, though the ideal mix of domains differs by phase; [[llama-3]] illustrates this with its differing domain-mix percentages at each phase (AIE p.370). Post-training data has additional diversity axes not captured by domain mix alone, such as token count (context and response length), number of conversational turns, and -- for models using synthetic data -- the ratio of human-generated to AI-generated data (AIE p.370).
+One consistent diversity axis across [[pre-training|pre-training]], supervised finetuning, and [[preference-finetuning]] is domain diversity, though the ideal mix of domains differs by phase; [[llama-3]] illustrates this with its differing domain-mix percentages at each phase (AIE p.370). [[post-training|Post-training]] data has additional diversity axes not captured by domain mix alone, such as token count (context and response length), number of conversational turns, and -- for models using synthetic data -- the ratio of human-generated to AI-generated data (AIE p.370).
 
 A simple approach to choosing a data mix is to reflect real-world application usage; a more rigorous approach runs scaling-law experiments, training several small models on candidate data mixes to predict a large model's performance on each, then picking the best-guess mix (AIE p.371).
 
@@ -26,6 +26,9 @@ None. The concept carries no figure of its own; Llama 3's domain-mix percentages
 - [[dataset-engineering]]  (part-of: data coverage is a consideration within the broader dataset engineering process)
 - [[scaling-law]]  (prerequisite: scaling-law experiments on small models are used to predict optimal data mixes for large models)
 - [[llama-3]]  (example-of: domain mix table shows diversity considerations differing by training phase)
+- [[preference-finetuning]]  (see-also: mentioned in this page's text)
+- [[post-training]]  (see-also: mentioned in this page's text)
+- [[pre-training]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch08-data-coverage]]

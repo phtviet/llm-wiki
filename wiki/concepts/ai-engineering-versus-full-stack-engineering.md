@@ -4,7 +4,7 @@ sources: [ch01-ai-engineering-versus-full-stack-engineering]
 ---
 # AI Engineering Versus Full-Stack Engineering
 
-The increased emphasis on application development, especially interfaces, brings AI
+The increased emphasis on [[application-development]], especially interfaces, brings AI
 engineering closer to full-stack development, and shifts the design of AI toolings to
 attract more frontend engineers (AIE p.46). Traditionally, ML engineering has been
 Python-centric: before foundation models, the most popular ML frameworks supported
@@ -21,6 +21,7 @@ None.
 
 ## Related
 - [[ai-engineering-workflow]]  (part-of: the product-first iteration workflow is the mechanism behind this convergence with full-stack development)
+- [[application-development]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch01-ai-engineering-versus-full-stack-engineering]]

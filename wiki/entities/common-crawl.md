@@ -6,7 +6,7 @@ sources: [ch02-training-data]
 
 Common Crawl is a dataset created by a nonprofit organization that sporadically crawls
 websites on the internet; in 2022 and 2023 it crawled approximately 2-3 billion web pages
-each month (AIE p.50). Its data quality is questionable, containing clickbait,
+each month (AIE p.50). Its [[data-quality]] is questionable, containing clickbait,
 misinformation, propaganda, conspiracy theories, and other low-trustworthiness content;
 a Washington Post study found that the 1,000 most common websites in the dataset include
 several outlets that rank low on NewsGuard's trustworthiness scale (AIE p.50). Despite
@@ -30,6 +30,7 @@ heavily skewed toward English (45.88%) over other languages (AIE p.50).
 - [[training-data-curation]]  (example-of: illustrates the 'use what we have, not what we want' problem in sourcing training data)
 - [[low-resource-languages]]  (boundary: Common Crawl's skew toward English leaves low-resource languages underrepresented)
 - [[gpt-4]]  (see-also: GPT-3 and other OpenAI models have used Common Crawl variants; contrast in generation and disclosure)
+- [[data-quality]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch02-training-data]]

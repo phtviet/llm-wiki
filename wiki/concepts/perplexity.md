@@ -6,7 +6,7 @@ sources: [ch03-perplexity, ch03-language-modeling-metrics]
 
 Perplexity (often shortened to PPL) is the exponential of entropy or cross entropy.
 Given a dataset with true distribution P, its perplexity is PPL(P) = 2^H(P); for a
-language model with learned distribution Q, PPL(P, Q) = 2^H(P,Q) (AIE p.121). If cross
+[[language-model]] with learned distribution Q, PPL(P, Q) = 2^H(P,Q) (AIE p.121). If cross
 entropy measures how difficult it is for a model to predict the next token, perplexity
 measures the model's uncertainty when predicting the next token: higher uncertainty
 means more possible options for the next token (AIE p.121).
@@ -31,6 +31,7 @@ options, so this model has a perplexity of 4 (AIE p.122).
 - [[entropy]]  (prerequisite: perplexity is the exponential of entropy, and its unit, bit vs. nat, determines the exponent base)
 - [[bits-per-character]]  (see-also: another cross-entropy-derived metric, each interconvertible with perplexity)
 - [[bits-per-byte]]  (see-also: another cross-entropy-derived metric, each interconvertible with perplexity)
+- [[language-model]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch03-perplexity]]

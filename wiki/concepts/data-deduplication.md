@@ -22,7 +22,7 @@ Deduplication reuses the same similarity-measurement techniques used for general
 similarity comparison, and the same task underlies identity resolution (e.g.
 determining whether two social media profiles are the same identity). Three concrete
 approaches are used in practice: pairwise comparison of every example against every
-other example (via exact match, n-gram match, fuzzy match, or semantic similarity),
+other example (via [[exact-match]], n-gram match, fuzzy match, or semantic similarity),
 which can be expensive at scale; hashing examples into buckets (e.g. via MinHash or
 Bloom filter) and comparing only within a bucket; and dimensionality reduction
 applied before pairwise comparison, reusing techniques from vector search (AIE p.400).
@@ -41,6 +41,7 @@ applied before pairwise comparison, reusing techniques from vector search (AIE p
 - [[data-contamination]]  (boundary: deduplication addresses train/test duplication, a specific cause of the contamination that inflates evaluation scores)
 - [[semantic-similarity]]  (prerequisite: pairwise deduplication reuses similarity-measurement techniques such as embedding-based semantic similarity)
 - [[vector-database]]  (see-also: dimensionality-reduction deduplication reuses techniques from vector search)
+- [[exact-match]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch08-deduplicate-data]]

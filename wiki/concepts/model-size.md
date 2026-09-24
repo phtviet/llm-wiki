@@ -4,7 +4,7 @@ sources: [ch02-model-size]
 ---
 # Model Size
 
-Model size is most commonly measured by [[model-parameters]]: the number of parameters is usually appended to a model's name (e.g. Llama-13B), and increasing a model's parameter count generally increases its capacity to learn, so within a model family more parameters tends to mean better performance (AIE p.67). Newer-generation models can outperform older, larger ones of the same size class: Llama 3-8B (2024) outperforms Llama 2-70B (2023) on MMLU (AIE p.67).
+Model size is most commonly measured by [[model-parameters]]: the number of parameters is usually appended to a model's name (e.g. Llama-13B), and increasing a model's parameter count generally increases its capacity to learn, so within a model family more parameters tends to mean better performance (AIE p.67). Newer-generation models can outperform older, larger ones of the same size class: Llama 3-8B (2024) outperforms [[llama-2]]-70B (2023) on MMLU (AIE p.67).
 
 Parameter count can mislead when a model is sparse. A sparse model has a large percentage of zero-value parameters, so a 7B-parameter model that is 90% sparse has only 700 million non-zero parameters; sparsity allows more efficient storage and computation, so a large sparse model can require less compute than a small dense model (AIE p.68). [[mixture-of-experts]] is the popular sparse architecture the book uses to illustrate this.
 
@@ -19,6 +19,7 @@ A larger model can also underperform a smaller one if it is not trained on enoug
 - [[dataset-size]]  (see-also: model size must be considered jointly with the size of training data)
 - [[scaling-law]]  (prerequisite: relates model size to dataset size and compute budget)
 - [[flop]]  (see-also: third of the three numbers, alongside parameters and tokens, that signal a model's scale)
+- [[llama-2]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch02-model-size]]

@@ -10,7 +10,7 @@ data, correcting for the fact that BPC varies with character encoding scheme. Gi
 BPC of 3 and a character encoded in 7 bits (7/8 of a byte), the BPB is 3 / (7/8) = 3.43
 (AIE p.121).
 
-Cross entropy, and therefore BPB, indicates how efficiently a language model can
+[[cross-entropy]], and therefore BPB, indicates how efficiently a language model can
 compress text. A BPB of 3.43 means the model can represent each original byte (8 bits)
 using only 3.43 bits, i.e. it can compress the original training text to less than half
 its original size (AIE p.121).
@@ -25,6 +25,7 @@ None.
 ## Related
 - [[bits-per-character]]  (prerequisite: BPB is derived from BPC, adjusted for the bits-per-character encoding scheme)
 - [[language-model]]  (part-of: BPB measures a language model's data-compression efficiency)
+- [[cross-entropy]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch03-bits-per-character-and-bits-per-byte]]

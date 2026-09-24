@@ -4,8 +4,8 @@ sources: [ch03-bits-per-character-and-bits-per-byte]
 ---
 # Bits-per-Character (BPC)
 
-Bits-per-character is a unit derived from a language model's cross entropy that
-normalizes for differing tokenization schemes. Because models tokenize text
+Bits-per-character is a unit derived from a language model's [[cross-entropy]] that
+normalizes for differing [[tokenization]] schemes. Because models tokenize text
 differently (e.g. one using words as tokens, another using characters), the number of
 bits needed per token is not directly comparable across models. BPC instead measures
 the number of bits needed per character: if a model's cross entropy is 6 bits per
@@ -26,6 +26,8 @@ None.
 ## Related
 - [[bits-per-byte]]  (prerequisite: BPC is converted into BPB to correct for encoding-scheme dependence)
 - [[language-model]]  (part-of: BPC measures a language model's per-character compression efficiency)
+- [[cross-entropy]]  (see-also: mentioned in this page's text)
+- [[tokenization]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch03-bits-per-character-and-bits-per-byte]]

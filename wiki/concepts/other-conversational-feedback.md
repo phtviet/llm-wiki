@@ -4,7 +4,7 @@ sources: [ch10-extracting-conversational-feedback]
 ---
 # Other Conversational Feedback (Action-Based)
 
-Other conversational feedback covers signals derived from user actions rather than message content. Regeneration -- a user requesting another response, sometimes from a different model -- may signal dissatisfaction with the first response, or simply a desire to compare options (common for creative requests like image or story generation). Regeneration signals tend to be stronger in usage-based-billing applications than subscription ones, since users are less likely to regenerate out of idle curiosity when it costs money. Some applications explicitly ask users to compare the new response against the previous one after a regeneration; this better-or-worse data can be used for preference finetuning (AIE p.478-479).
+Other conversational feedback covers signals derived from user actions rather than message content. Regeneration -- a user requesting another response, sometimes from a different model -- may signal dissatisfaction with the first response, or simply a desire to compare options (common for creative requests like image or story generation). Regeneration signals tend to be stronger in usage-based-billing applications than subscription ones, since users are less likely to regenerate out of idle curiosity when it costs money. Some applications explicitly ask users to compare the new response against the previous one after a regeneration; this better-or-worse data can be used for [[preference-finetuning]] (AIE p.478-479).
 
 Conversation organization actions -- delete, rename, share, bookmark -- also carry signal. Deleting a conversation is usually a strong negative signal (unless the user is removing an embarrassing exchange); renaming suggests the conversation itself was good but the auto-generated title was not (AIE p.479).
 
@@ -21,6 +21,7 @@ None.
 - [[natural-language-feedback]]  (contrast: inferred from user actions vs. inferred from message content)
 - [[comparison-data]]  (example-of: explicit post-regeneration comparisons produce winning/losing response pairs usable as comparison data)
 - [[conversational-bots]]  (see-also: conversation length and diversity signals are especially relevant for companion and customer-support bots)
+- [[preference-finetuning]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch10-extracting-conversational-feedback]]

@@ -11,9 +11,9 @@ Optimization means identifying bottlenecks and addressing them. Inference worklo
 
 Mathematically, whether an operation is compute-bound or memory bandwidth-bound is determined by its arithmetic intensity -- the number of arithmetic operations per byte of memory accessed -- a classification introduced in the Roofline paper (Williams et al., 2009) (AIE p.408). Profiling tools like NVIDIA Nsight visualize this via a roofline chart (AIE p.408).
 
-Different architectures and workloads land on different sides: image generators like Stable Diffusion are typically compute-bound, while autoregressive language model inference is typically memory bandwidth-bound (AIE p.408-409). Different optimization techniques target different bottlenecks -- a compute-bound workload benefits from more chips or higher FLOP/s hardware, while a memory bandwidth-bound workload benefits from higher-bandwidth hardware (AIE p.408).
+Different architectures and workloads land on different sides: image generators like Stable Diffusion are typically compute-bound, while [[autoregressive-language-model]] inference is typically memory bandwidth-bound (AIE p.408-409). Different optimization techniques target different bottlenecks -- a compute-bound workload benefits from more chips or higher FLOP/s hardware, while a memory bandwidth-bound workload benefits from higher-bandwidth hardware (AIE p.408).
 
-For transformer-based language models, inference splits into prefill and decode steps with opposite profiles: prefill is compute-bound and decode is memory bandwidth-bound (AIE p.409). Context length, output length, and request batching strategies affect how much prefilling and decoding computation occurs, and thus which bottleneck dominates; long context typically produces a memory bandwidth-bound workload, though optimization techniques can remove this bottleneck (AIE p.409-410). As of the book's writing, the prevalence of the transformer architecture and current accelerator limitations mean many AI workloads are memory bandwidth-bound, though future hardware and software may shift this toward compute-bound (AIE p.410).
+For transformer-based language models, inference splits into prefill and decode steps with opposite profiles: prefill is compute-bound and decode is memory bandwidth-bound (AIE p.409). [[context-length]], output length, and request batching strategies affect how much prefilling and decoding computation occurs, and thus which bottleneck dominates; long context typically produces a memory bandwidth-bound workload, though optimization techniques can remove this bottleneck (AIE p.409-410). As of the book's writing, the prevalence of the [[transformer-architecture]] and current accelerator limitations mean many AI workloads are memory bandwidth-bound, though future hardware and software may shift this toward compute-bound (AIE p.410).
 
 ## Key figures
 None.
@@ -26,6 +26,9 @@ None.
 - [[inference-server]]  (prerequisite: an inference server's design must address these bottlenecks)
 - [[gpu]]  (see-also: accelerator choice interacts with which bottleneck a workload hits)
 - [[flop]]  (see-also: FLOP/s measures compute capability relevant to compute-bound workloads)
+- [[autoregressive-language-model]]  (see-also: mentioned in this page's text)
+- [[transformer-architecture]]  (see-also: mentioned in this page's text)
+- [[context-length]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch09-inference-overview]]

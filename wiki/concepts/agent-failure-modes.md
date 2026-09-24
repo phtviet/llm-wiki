@@ -6,7 +6,7 @@ sources: [ch06-agent-failure-modes-and-evaluation]
 
 Evaluating an agent means identifying its failure modes and measuring how often each occurs. The more complex a task an agent performs, the more possible failure points there are. Beyond the failure modes common to all AI applications, agents have unique failures caused by planning, tool execution, and efficiency (AIE p.298).
 
-The book illustrates these failure modes with a simple benchmark on its GitHub repository, alongside external agent benchmarks and leaderboards such as the Berkeley Function Calling Leaderboard, the AgentOps evaluation harness, and the TravelPlanner benchmark (AIE p.298). The three categories are developed as distinct concepts: [[planning-failures]], [[tool-failures]], and [[agent-efficiency]].
+The book illustrates these failure modes with a simple benchmark on its GitHub repository, alongside external agent benchmarks and leaderboards such as the Berkeley [[function-calling]] Leaderboard, the AgentOps [[evaluation-harness]], and the TravelPlanner benchmark (AIE p.298). The three categories are developed as distinct concepts: [[planning-failures]], [[tool-failures]], and [[agent-efficiency]].
 
 ## Key figures
 None.
@@ -21,6 +21,8 @@ None.
 - [[planning-failures]]  (part-of: one of the three failure-mode categories)
 - [[tool-failures]]  (part-of: one of the three failure-mode categories)
 - [[agent-efficiency]]  (part-of: one of the three failure-mode categories)
+- [[evaluation-harness]]  (see-also: mentioned in this page's text)
+- [[function-calling]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch06-agent-failure-modes-and-evaluation]]

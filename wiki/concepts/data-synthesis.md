@@ -5,7 +5,7 @@ sources: [ch08-model-distillation, ch08-why-data-synthesis]
 # Data Synthesis
 
 Data synthesis is the use of AI models to generate training data. The book gives five
-main reasons teams turn to it: increasing data quantity, increasing data coverage,
+main reasons teams turn to it: increasing [[data-quantity]], increasing data coverage,
 increasing data quality, mitigating privacy concerns, and distilling models (AIE p.381).
 
 To increase **quantity**, synthesis offers an abundant supply of training and test data
@@ -38,7 +38,7 @@ None.
 
 ## Examples
 - [[alphageometry]]  (rule-based synthesis of 100 million geometry examples)
-- [[cosmopedia]]  (25-billion-token synthetic pre-training corpus)
+- [[cosmopedia]]  (25-billion-token synthetic [[pre-training|pre-training]] corpus)
 - [[metamath]]  (paraphrase-rewritten math dataset expanded via synthesis)
 
 ## Related
@@ -47,6 +47,8 @@ None.
 - [[data-coverage]]  (part-of: synthesis is a technique for filling coverage gaps by generating targeted data)
 - [[data-augmentation]]  (contrast: augmentation transforms existing real data, e.g. flipping an image, while synthesis generates new data from a model)
 - [[model-collapse]]  (boundary: recursive training on synthetic data risks irreversible degradation)
+- [[data-quantity]]  (see-also: mentioned in this page's text)
+- [[pre-training]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch08-model-distillation]]

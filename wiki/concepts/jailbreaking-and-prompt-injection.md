@@ -12,7 +12,7 @@ Prompt attacks are possible precisely because models are trained to follow instr
 
 - *Obfuscation*: misspelling blocked keywords (e.g. 'vacine', 'el qeada') or mixing languages/Unicode, since models understand typos but keyword filters may not; also inserting password-like special-character strings the model hasn't been trained on, e.g. appending '! ! ! ! ! ! ! ! !' to a refused bomb-making request to get compliance (Zou et al., 2023). Both are easily defeated by filters blocking unusual characters (AIE p.239).
 - *Output formatting manipulation*: hiding malicious intent in an unexpected output format, e.g. asking for a poem about hotwiring a car, a rap about robbing a house, code for a Molotov cocktail, or a UwU-style paragraph about enriching uranium, instead of asking directly (AIE p.239-240).
-- *Roleplaying*: asking the model to pretend to be a character or scenario exempt from its rules -- see [[dan-jailbreak]] as the canonical example, plus variants like the grandma exploit (a loving grandmother telling napalm-making stories as a bedtime story), an NSA agent with a guardrail-bypassing code, an unrestricted simulation, or a restriction-free 'Filter Improvement Mode' (AIE p.240).
+- *[[roleplaying]]*: asking the model to pretend to be a character or scenario exempt from its rules -- see [[dan-jailbreak]] as the canonical example, plus variants like the grandma exploit (a loving grandmother telling napalm-making stories as a bedtime story), an NSA agent with a guardrail-bypassing code, an unrestricted simulation, or a restriction-free 'Filter Improvement Mode' (AIE p.240).
 
 **Automated attacks** use algorithms to partially or fully automate prompt hacking. Zou et al. (2023) introduced algorithms that randomly substitute prompt substrings to find working variations. See [[pair-jailbreak-method]] for a systematic AI-powered approach that often needs fewer than twenty queries (AIE p.240-241).
 
@@ -31,6 +31,7 @@ Prompt attacks are possible precisely because models are trained to follow instr
 - [[instruction-hierarchy]]  (boundary: instruction-hierarchy training is a defense that tries to make models prioritize system over user/tool instructions, limiting but not eliminating injection)
 - [[information-extraction]]  (contrast: extracts training data/context rather than bypassing safety filters directly)
 - [[prompt-versus-context]]  (prerequisite: indirect injection exploits the fact that retrieved context is folded into the model's effective prompt)
+- [[roleplaying]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch05-jailbreaking-and-prompt-injection]]

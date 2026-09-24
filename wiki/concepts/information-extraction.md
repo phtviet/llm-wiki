@@ -4,7 +4,7 @@ sources: [ch05-information-extraction, ch08-model-distillation]
 ---
 # Information Extraction
 
-Information extraction is a prompt attack that exploits a language model's conversational interface to pull out training data or context information it was not meant to reveal. Motivations include data theft (extracting training data to build a competitive model), privacy violation (exposing private data used in training or context, e.g. Gmail's autocomplete model trained on users' emails), and copyright infringement (getting the model to regurgitate copyrighted text) (AIE p.243).
+Information extraction is a prompt attack that exploits a [[language-model]]'s conversational interface to pull out training data or context information it was not meant to reveal. Motivations include data theft (extracting training data to build a competitive model), privacy violation (exposing private data used in training or context, e.g. Gmail's autocomplete model trained on users' emails), and copyright infringement (getting the model to regurgitate copyrighted text) (AIE p.243).
 
 A related niche research area, factual probing, studies what a model knows rather than attacking it: the LAMA benchmark (Petroni et al., 2019) probes relational knowledge of the form 'X [relation] Y' using fill-in-the-blank prompts such as 'Winston Churchill is a _ citizen' (AIE p.243). The same fill-in-the-blank technique can be repurposed to extract sensitive training data, on the assumption that models memorize training data and the right prompt can trigger that memorization, e.g. 'X's email address is _' (AIE p.244).
 
@@ -29,6 +29,7 @@ Models can also regurgitate copyrighted training data without any adversarial at
 - [[prompt-attack-risks]]  (part-of: data theft, privacy violation, and copyright infringement are specific risk categories of prompt attacks)
 - [[model-distillation]]  (boundary: distillation trains a student on a teacher's outputs by design, whereas information extraction pulls data the model was not meant to reveal)
 - [[helm]]  (evaluates: HELM's copyright regurgitation measurement is a form of evaluating this risk)
+- [[language-model]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch05-information-extraction]]

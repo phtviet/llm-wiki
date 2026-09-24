@@ -10,7 +10,7 @@ On six Project Euler math problems, GPT-4 solved problems in English more than t
 
 Translating queries into English and back is a common workaround but is not ideal: it requires a model that already understands the under-represented language well enough to translate, and translation can lose information -- for example, Vietnamese pronouns encoding the relationship between speakers collapse into 'I' and 'you' in English (AIE p.54).
 
-Models can also behave differently by language for reasons unrelated to raw capability. NewsGuard found that in April 2023, ChatGPT-3.5 declined to produce misinformation about China for six of seven prompts in English, but produced false claims for all seven prompts in both simplified and traditional Chinese; the cause was unclear, though possibly biases in pre-training or alignment data (AIE p.54-55).
+Models can also behave differently by language for reasons unrelated to raw capability. NewsGuard found that in April 2023, ChatGPT-3.5 declined to produce misinformation about China for six of seven prompts in English, but produced false claims for all seven prompts in both simplified and traditional Chinese; the cause was unclear, though possibly biases in [[pre-training|pre-training]] or alignment data (AIE p.54-55).
 
 Tokenization efficiency also varies sharply by language. Benchmarking GPT-4 on MASSIVE (one million short texts translated across 52 languages), Yennie Jun found that conveying the same meaning takes far more tokens in some languages: a median of 7 tokens in English versus 32 in Hindi and 72 in Burmese (AIE p.55). Since inference latency and API cost scale with token count, this makes GPT-4 roughly ten times slower and ten times more expensive in Burmese than in English for equivalent content (AIE p.55).
 
@@ -29,6 +29,7 @@ Tokenization efficiency also varies sharply by language. Benchmarking GPT-4 on M
 - [[low-resource-languages]]  (part-of: under-representation is the primary but not sole cause of the gap)
 - [[tokenization]]  (boundary: tokenization efficiency differences compound the quality gap into a separate cost/latency gap)
 - [[gpt-4]]  (example-of: the model benchmarked across MMLU, Project Euler, and MASSIVE in this section)
+- [[pre-training]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch02-multilingual-models]]

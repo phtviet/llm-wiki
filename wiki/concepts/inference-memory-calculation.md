@@ -4,7 +4,7 @@ sources: [ch07-memory-math]
 ---
 # Inference Memory Calculation
 
-During inference, only the forward pass runs, so memory is needed for the model's weights plus activation values. Given parameter count N and memory per parameter M, the weight memory is N x M. Activation and key-value vector memory for the attention mechanism grows linearly with sequence length and batch size, but for many applications can be approximated as 20% of the weight memory, bringing the total footprint to N x M x 1.2 (AIE p.322).
+During inference, only the forward pass runs, so memory is needed for the model's weights plus activation values. Given parameter count N and memory per parameter M, the weight memory is N x M. Activation and key-value vector memory for the [[attention-mechanism]] grows linearly with sequence length and [[batch-size]], but for many applications can be approximated as 20% of the weight memory, bringing the total footprint to N x M x 1.2 (AIE p.322).
 
 A model's memory footprint grows rapidly with size, making memory a bottleneck for operating larger models (AIE p.323).
 
@@ -21,6 +21,8 @@ A model's memory footprint grows rapidly with size, making memory a bottleneck f
 - [[model-parameters]]  (prerequisite: parameter count N is the base variable in the inference memory formula)
 - [[memory-bottleneck]]  (part-of: inference memory footprint is one half of the memory-bottleneck comparison between finetuning and inference)
 - [[quantization]]  (see-also: reducing bytes per parameter M directly shrinks inference memory footprint)
+- [[attention-mechanism]]  (see-also: mentioned in this page's text)
+- [[batch-size]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch07-memory-math]]

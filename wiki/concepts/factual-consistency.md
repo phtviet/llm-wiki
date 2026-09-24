@@ -13,7 +13,7 @@ Consistency is easier to verify against explicit context than against open knowl
 
 When designing hallucination metrics, it helps to identify which query types a model tends to hallucinate on — e.g. niche-knowledge queries (the book gives VMO vs. IMO as an example) and queries asking about things that don't exist — and focus benchmarks on those (AIE p.165-166).
 
-Factual consistency can be verified via [[ai-as-a-judge]] (general-purpose or specialized), via [[textual-entailment]] framing, or via trained classification scorers. Liu et al. (2023) and Luo et al. (2023) showed GPT-3.5 and GPT-4 outperform prior methods at measuring factual consistency (AIE p.166). More sophisticated AI-judge techniques include self-verification and knowledge-augmented verification (AIE p.167):
+Factual consistency can be verified via [[ai-as-a-judge]] (general-purpose or specialized), via [[textual-entailment]] framing, or via trained classification scorers. Liu et al. (2023) and Luo et al. (2023) showed GPT-3.5 and [[gpt-4|GPT-4]] outperform prior methods at measuring factual consistency (AIE p.166). More sophisticated AI-judge techniques include self-verification and knowledge-augmented verification (AIE p.167):
 
 - **Self-verification** (e.g. SelfCheckGPT, Manakul et al., 2023) assumes that if a model's multiple generated outputs disagree with each other, the original output is likely hallucinated; it generates N new responses and measures consistency of the original response R against them, but requires many AI queries and can be expensive (AIE p.167).
 - **Knowledge-augmented verification** (e.g. SAFE, Wei et al., 2024) uses search-engine results to verify a response in four steps: decompose the response into individual statements, revise each statement to be self-contained, propose fact-checking queries per statement, and use AI to check consistency against search results (AIE p.167).
@@ -33,6 +33,7 @@ Instead of general-purpose AI judges, specialized scorers can be trained as a cl
 - [[hallucination]]  (contrast: factual inconsistency is the negative outcome hallucination detection aims to catch)
 - [[safety]]  (part-of: factual inconsistency is technically a safety concern, but is broken out separately given its scope)
 - [[perplexity]]  (see-also: chapter 3's related metric for language-model output quality, referenced alongside evaluation criteria)
+- [[gpt-4]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch04-generation-capability]]

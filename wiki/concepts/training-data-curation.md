@@ -17,7 +17,7 @@ matters for applications with narrower needs (AIE p.50).
 Training on all available data, general and specialized alike, is common but not
 necessarily optimal: more data usually demands more compute and does not always improve
 performance. A model trained on a smaller amount of high-quality data can outperform one
-trained on a larger amount of low-quality data, making data quality, not just quantity,
+trained on a larger amount of low-quality data, making [[data-quality]], not just quantity,
 a central curation concern (AIE p.51).
 
 ## Key figures
@@ -33,6 +33,7 @@ a central curation concern (AIE p.51).
 - [[low-resource-languages]]  (boundary: curation for underrepresented languages is one motivation for moving beyond general-purpose crawled data)
 - [[dataset-engineering]]  (part-of: curating training data is one aspect of the broader dataset-engineering practice)
 - [[domain-specific-models]]  (see-also: domain- and language-specific curation supports models tailored to narrower needs)
+- [[data-quality]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch02-training-data]]

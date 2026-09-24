@@ -6,7 +6,7 @@ sources: [ch04-navigate-public-benchmarks]
 
 Building a leaderboard from public benchmarks requires answering two questions: which benchmarks to include, and how to aggregate their results into a ranking. With thousands of benchmarks available, it is impossible to examine them all, and models can rank differently across benchmarks measuring different things (e.g. coding vs. toxicity), making the choice of what to include and how to weigh it consequential (AIE p.191).
 
-Public leaderboards balance coverage against compute cost. Compute constraints force most leaderboards to use only a small subset of benchmarks: HELM Lite excluded MS MARCO for cost reasons, and Hugging Face opted out of HumanEval due to its heavy compute requirements. Hugging Face's Open LLM Leaderboard started with four benchmarks in 2023, grew to six by year end, and was overhauled again in June 2024 with a harder, more practical benchmark set (replacing GSM-8K with MATH lvl 5 and MMLU with MMLU-PRO, and adding GPQA, MuSR, BBH, and IFEval) as the old set saturated. Stanford's HELM Leaderboard used ten benchmarks at the same time Hugging Face used six, with only MMLU and GSM-8K shared between them, reflecting no clear standard for what 'coverage' means (AIE p.192-194).
+Public leaderboards balance coverage against compute cost. Compute constraints force most leaderboards to use only a small subset of benchmarks: HELM Lite excluded MS MARCO for cost reasons, and Hugging Face opted out of [[humaneval]] due to its heavy compute requirements. Hugging Face's Open LLM Leaderboard started with four benchmarks in 2023, grew to six by year end, and was overhauled again in June 2024 with a harder, more practical benchmark set (replacing GSM-8K with MATH lvl 5 and MMLU with MMLU-PRO, and adding GPQA, MuSR, BBH, and [[ifeval]]) as the old set saturated. Stanford's HELM Leaderboard used ten benchmarks at the same time Hugging Face used six, with only MMLU and GSM-8K shared between them, reflecting no clear standard for what 'coverage' means (AIE p.192-194).
 
 Aggregation methods also diverge: Hugging Face averaged scores across benchmarks, treating each equally regardless of difficulty or relevance, while HELM used mean win rate -- the fraction of times a model beats another model, averaged across scenarios -- instead of averaging (AIE p.195).
 
@@ -31,6 +31,8 @@ For a specific application, the same process applies at smaller scale: gather be
 - [[model-selection]]  (part-of: benchmark selection and aggregation is how public benchmarks feed into narrowing candidate models)
 - [[mmlu]]  (example-of: MMLU is a benchmark commonly included in these leaderboards, later replaced by MMLU-PRO)
 - [[truthfulqa]]  (example-of: TruthfulQA is one of the benchmarks whose correlation with others was analyzed)
+- [[humaneval]]  (see-also: mentioned in this page's text)
+- [[ifeval]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch04-navigate-public-benchmarks]]

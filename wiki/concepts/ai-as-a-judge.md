@@ -9,7 +9,7 @@ AI as a judge means using an AI model to evaluate other AI models' outputs, a pr
 AI judgments are not infallible, but because each AI model aggregates patterns from a mass of training data, its judgments can be representative of mass opinion; with the right prompt and model, this yields reasonably good judgments across a wide range of topics. Studies have found certain AI judges strongly correlated with human evaluators. AI judges can also explain their decisions in addition to producing a score, which is useful for auditing evaluation results. Even where AI judgments fall short of human judgments, they can still be good enough to guide an application's development and give a project enough confidence to get off the ground (AIE p.137-138).
 
 ## Key figures
-- Zheng et al. (2023) found GPT-4-to-human agreement of 85% on the MT-Bench benchmark, exceeding the 81% agreement measured among humans themselves (AIE p.137)
+- Zheng et al. (2023) found [[gpt-4|GPT-4]]-to-human agreement of 85% on the MT-Bench benchmark, exceeding the 81% agreement measured among humans themselves (AIE p.137)
 - Dubois et al. (2023) found AlpacaEval's AI judges correlate with LMSYS's human-evaluated Chat Arena leaderboard at 0.98 (AIE p.137)
 
 ## Examples
@@ -21,6 +21,7 @@ AI judgments are not infallible, but because each AI model aggregates patterns f
 - [[criteria-ambiguity]]  (boundary: flexibility of judge criteria comes at the cost of inconsistent standardization across tools)
 - [[ai-judge-bias]]  (boundary: correlation with humans does not eliminate systematic biases in AI judgments)
 - [[ai-judge-cost-and-latency]]  (contrast: AI judges are cheaper and faster than human evaluators, but not free of their own cost/latency trade-offs)
+- [[gpt-4]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch08-model-distillation]]

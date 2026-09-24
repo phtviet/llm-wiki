@@ -4,7 +4,7 @@ sources: [ch10-feedback-limitations]
 ---
 # Feedback Biases
 
-User feedback carries systematic biases that must be understood and designed around, since each application's feedback has its own patterns (AIE p.490). The section identifies four:
+[[user-feedback]] carries systematic biases that must be understood and designed around, since each application's feedback has its own patterns (AIE p.490). The section identifies four:
 
 **Leniency bias** is the tendency to rate items more positively than warranted, often to avoid conflict or because it is the easiest option. On a five-star scale, users may feel pressured toward five stars, reserving four for when something goes wrong. Uber found that in 2015 the average driver rating was 4.8, with scores below 4.6 putting drivers at risk of deactivation; despite the bias, the rating system still differentiated good drivers from bad ones. Removing the strong negative connotation of low numeric ratings (e.g. replacing 1-5 stars with descriptive phrases) can help surface more granular feedback (AIE p.490).
 
@@ -21,6 +21,7 @@ User feedback carries systematic biases that must be understood and designed aro
 - [[conversational-feedback]]  (part-of: these biases affect feedback collected through conversational and other user-facing signals)
 - [[degenerate-feedback-loop]]  (boundary: biases distort individual feedback signals, while a degenerate loop is the compounding effect of acting on biased feedback over time)
 - [[feedback-design]]  (prerequisite: understanding these biases should inform how a feedback system is designed)
+- [[user-feedback]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch10-feedback-limitations]]

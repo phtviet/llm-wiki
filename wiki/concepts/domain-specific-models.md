@@ -13,11 +13,12 @@ None. Figures cited in this section (e.g. protein counts, benchmark accuracies) 
 
 ## Examples
 - [[alphafold]]  (trained on protein sequences and structures; canonical biomedical domain-specific model)
-- [[clip]]  (general-purpose image-language model, contrasted against domain performance)
+- [[clip]]  (general-purpose image-[[language-model]], contrasted against domain performance)
 
 ## Related
 - [[clip]]  (contrast: general-purpose embedding model whose benchmark performance is used to illustrate domain coverage gaps)
 - [[foundation-model]]  (boundary: domain-specific models are curated for narrow tasks where general-purpose foundation models underperform)
+- [[language-model]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch02-domain-specific-models]]

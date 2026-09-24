@@ -12,7 +12,7 @@ Another use case is bias mitigation: if a base model perpetuates biases from its
 
 Finetuning smaller models is much more common than finetuning big ones, since smaller models require less memory, making them easier, cheaper, and faster to finetune and to run in production. A small model finetuned on a specific task can outperform a much larger out-of-the-box model on that task (AIE p.312).
 
-A related but distinct approach is finetuning a small model to imitate a larger model's behavior using data the larger model generated -- this is [[model-distillation]], a form of data synthesis (AIE p.312).
+A related but distinct approach is finetuning a small model to imitate a larger model's behavior using data the larger model generated -- this is [[model-distillation]], a form of [[data-synthesis]] (AIE p.312).
 
 In the early days of foundation models, the strongest models were commercial with limited finetuning access, leaving few competitive models to finetune. As the open source community has produced high-quality models across sizes and domains, finetuning has become more viable and attractive (AIE p.312).
 
@@ -27,6 +27,7 @@ None. See [[finetuning]] for general framing; entity-specific figures (e.g. Gram
 - [[model-distillation]]  (example-of: distillation is finetuning a small model on a larger model's outputs)
 - [[reasons-not-to-finetune]]  (contrast: counterarguments and costs against finetuning)
 - [[peft]]  (see-also: smaller models being easier to finetune connects to memory-efficient finetuning approaches)
+- [[data-synthesis]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch07-reasons-to-finetune]]

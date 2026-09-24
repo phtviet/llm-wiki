@@ -4,7 +4,7 @@ sources: [ch04-model-selection-workflow]
 ---
 # Model Selection Workflow
 
-The model selection workflow is a four-step, iterative process for choosing which
+The [[model-selection]] workflow is a four-step, iterative process for choosing which
 model(s) to use for an application: (1) filter out models whose hard attributes don't
 work for you, based on internal policies and whether you want commercial APIs or
 self-hosted models; (2) use publicly available information such as benchmark
@@ -30,6 +30,7 @@ None.
 - [[hard-and-soft-attributes]]  (prerequisite: filtering by hard attributes is the workflow's first step)
 - [[model-build-versus-buy]]  (see-also: the API-vs-self-host question the workflow revisits at step 1)
 - [[evaluation]]  (part-of: steps 2-4 of the workflow are forms of model evaluation)
+- [[model-selection]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch04-model-selection-workflow]]

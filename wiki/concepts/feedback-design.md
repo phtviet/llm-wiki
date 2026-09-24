@@ -4,7 +4,7 @@ sources: [ch10-feedback-design]
 ---
 # Feedback Design
 
-Feedback design is the practice of deciding when and how an AI application collects user feedback, so that collection is valuable to the product without disrupting the user's workflow. Feedback should be collectable throughout the user journey, and the option to give it -- especially to report errors -- should be nonintrusive (AIE p.480).
+Feedback design is the practice of deciding when and how an AI application collects [[user-feedback]], so that collection is valuable to the product without disrupting the user's workflow. Feedback should be collectable throughout the user journey, and the option to give it -- especially to report errors -- should be nonintrusive (AIE p.480).
 
 Particularly valuable moments to collect feedback include: at the beginning of use, to calibrate the application for a new user (e.g. a face ID scan, a voice-assistant wake-word sample, a language-learning skill check); when something bad happens, such as a hallucination, a blocked legitimate request, or a slow response, so users can downvote, regenerate, switch models, or hand off to a human; and when the model has low confidence, where showing multiple candidate outputs side by side lets the user's choice serve as a comparative signal usable for [[preference-finetuning]] (AIE p.481-483).
 
@@ -24,6 +24,7 @@ None. The figures in this section belong to specific companies' feedback mechani
 - [[comparative-evaluation]]  (see-also: side-by-side low-confidence outputs generate comparative signals usable the same way as comparative evaluation data)
 - [[preference-finetuning]]  (prerequisite: comparative user feedback signals can feed preference finetuning)
 - [[data-flywheel]]  (part-of: well-designed feedback collection is how a product's own usage data becomes a flywheel)
+- [[user-feedback]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch10-feedback-design]]

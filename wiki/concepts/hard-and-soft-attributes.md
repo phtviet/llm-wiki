@@ -7,9 +7,9 @@ sources: [ch04-model-selection-workflow]
 When evaluating models, it is useful to differentiate hard attributes (what is
 impossible or impractical to change) from soft attributes (what can be improved upon).
 Hard attributes often result from decisions made by model providers (licenses,
-training data, model size) or from a team's own policies (privacy, control); for some
+training data, [[model-size]]) or from a team's own policies (privacy, control); for some
 use cases they can significantly reduce the pool of viable models. Soft attributes are
-things like accuracy, toxicity, or factual consistency, which can potentially be
+things like accuracy, toxicity, or [[factual-consistency]], which can potentially be
 improved (AIE p.179).
 
 What counts as hard versus soft depends on both the model and the use case. Latency,
@@ -28,6 +28,8 @@ tweaking before being abandoned (AIE p.179-180).
 ## Related
 - [[model-selection-workflow]]  (prerequisite: classifying attributes as hard or soft is the first step in the model selection workflow)
 - [[model-build-versus-buy]]  (see-also: both concern narrowing model choices based on constraints)
+- [[factual-consistency]]  (see-also: mentioned in this page's text)
+- [[model-size]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch04-model-selection-workflow]]

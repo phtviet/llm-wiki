@@ -12,8 +12,8 @@ The author chose the term 'AI engineering' over alternatives (ML engineering, ML
 - Goldman Sachs Research estimated AI investment could approach $100 billion in the US and $200 billion globally by 2025 (AIE p.13)
 - One in three S&P 500 companies mentioned AI in Q2 2023 earnings calls, three times the rate a year earlier (AIE p.13)
 - Companies mentioning AI in earnings calls saw an average 4.6% stock price increase vs. 2.4% for those that did not (AIE p.13-14)
-- Within two years, four open source AI engineering tools (AutoGPT, Stable Diffusion web UI, LangChain, Ollama) garnered more GitHub stars than Bitcoin, and are on track to surpass React and Vue (AIE p.14)
-- Terms like 'Generative AI,' 'ChatGPT,' 'Prompt Engineering,' and 'Prompt Crafting' were added to LinkedIn profiles at an average 75% month-over-month increase as of August 2023 (AIE p.14)
+- Within two years, four open source AI engineering tools (AutoGPT, Stable Diffusion web UI, LangChain, Ollama) garnered more GitHub stars than Bitcoin, and are on track to surpass [[react-framework|React]] and Vue (AIE p.14)
+- Terms like 'Generative AI,' 'ChatGPT,' '[[prompt-engineering]],' and 'Prompt Crafting' were added to LinkedIn profiles at an average 75% month-over-month increase as of August 2023 (AIE p.14)
 
 ## Examples
 - [[github-copilot]]
@@ -23,6 +23,8 @@ The author chose the term 'AI engineering' over alternatives (ML engineering, ML
 - [[ai-engineering-versus-full-stack-engineering]]  (see-also: companion contrast on how foundation models pull AI engineering toward full-stack development)
 - [[model-adaptation]]  (prerequisite: AI engineering relies on adapting existing foundation models rather than training new ones)
 - [[ai-engineering-workflow]]  (part-of: the product-first workflow that AI engineering practice follows)
+- [[prompt-engineering]]  (see-also: mentioned in this page's text)
+- [[react-framework]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch01-from-foundation-models-to-ai-engineering]]

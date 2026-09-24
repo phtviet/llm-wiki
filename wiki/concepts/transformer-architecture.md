@@ -10,7 +10,7 @@ Seq2seq had two problems the transformer addresses. First, its decoder generated
 
 While the transformer removes the sequential input bottleneck, transformer-based autoregressive models still have a sequential output bottleneck. Inference therefore has two steps: prefill, where the model processes input tokens in parallel to build the intermediate key/value state; and decode, where the model generates one output token at a time (AIE p.60).
 
-A transformer model is composed of multiple [[transformer-block]]s, plus an embedding module before them and an output layer after them. Model size is determined by the model's dimension, the number of transformer blocks, the feedforward dimension, and the vocabulary size (AIE p.62-63). The transformer has proven unusually durable: it has dominated since 2017, longer than seq2seq (2014-2018) or GANs (2014-2019), because a replacement architecture must perform at the scale and on the hardware people already care about (AIE p.65).
+A transformer model is composed of multiple [[transformer-block]]s, plus an embedding module before them and an output layer after them. [[model-size]] is determined by the model's dimension, the number of transformer blocks, the feedforward dimension, and the vocabulary size (AIE p.62-63). The transformer has proven unusually durable: it has dominated since 2017, longer than seq2seq (2014-2018) or GANs (2014-2019), because a replacement architecture must perform at the scale and on the hardware people already care about (AIE p.65).
 
 ## Key figures
 None. Model-specific dimension figures (e.g. Llama 2/3 sizes) live on the Llama entity page; general architectural claims here carry no single load-bearing number of their own.
@@ -23,6 +23,7 @@ None. Model-specific dimension figures (e.g. Llama 2/3 sizes) live on the Llama 
 - [[attention-mechanism]]  (part-of: attention is the core mechanism inside each transformer block)
 - [[transformer-block]]  (part-of: transformer blocks are the repeated building unit of the architecture)
 - [[state-space-models]]  (contrast: alternative architecture family aiming to address transformer limitations, e.g. context scaling)
+- [[model-size]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch02-model-architecture]]

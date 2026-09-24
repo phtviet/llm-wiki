@@ -12,7 +12,7 @@ Another method is n-gram similarity, based on overlap of n-token sequences rathe
 
 Common lexical-similarity metrics are BLEU, ROUGE, METEOR++, TER, and CIDEr, differing in how overlap is calculated; these were common before foundation models, especially for translation, and are still used by benchmarks like WMT, COCO Captions, and GEMv2 (AIE p.131).
 
-Drawbacks: lexical similarity requires a comprehensive set of reference responses -- a correct response can score low if no reference resembles it (Adept found this happening with its Fuyu model on an image-captioning benchmark). References themselves can also be wrong (WMT 2023 Metrics shared-task organizers found many bad reference translations), which is part of why reference-free metrics have become strong contenders on correlation to human judgment (Freitag et al., 2023). Additionally, higher lexical similarity doesn't always mean a better response: on HumanEval, OpenAI found BLEU scores similar for correct and incorrect code solutions, showing that optimizing for BLEU is not the same as optimizing for functional correctness (Chen et al., 2021) (AIE p.131).
+Drawbacks: lexical similarity requires a comprehensive set of reference responses -- a correct response can score low if no reference resembles it (Adept found this happening with its Fuyu model on an image-captioning benchmark). References themselves can also be wrong (WMT 2023 Metrics shared-task organizers found many bad reference translations), which is part of why reference-free metrics have become strong contenders on correlation to human judgment (Freitag et al., 2023). Additionally, higher lexical similarity doesn't always mean a better response: on [[humaneval]], OpenAI found BLEU scores similar for correct and incorrect code solutions, showing that optimizing for BLEU is not the same as optimizing for functional correctness (Chen et al., 2021) (AIE p.131).
 
 ## Key figures
 - Example word-overlap scores: 80% (4/5 words) vs. 60% (3/5 words) for two candidate responses against the same reference (AIE p.130)
@@ -22,6 +22,7 @@ Drawbacks: lexical similarity requires a comprehensive set of reference response
 - [[exact-match]]  (contrast: exact match is binary and requires an identical response, lexical similarity is a sliding-scale overlap score)
 - [[semantic-similarity]]  (contrast: lexical similarity measures surface-level token overlap vs. meaning)
 - [[functional-correctness]]  (boundary: high lexical similarity (BLEU) does not imply functional correctness, as shown on HumanEval)
+- [[humaneval]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch03-similarity-measurements-against-reference-data]]

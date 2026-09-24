@@ -14,13 +14,14 @@ Beyond automated statistics, the section stresses that manual inspection is irre
 None.
 
 ## Examples
-- [[gpt-instruction-tuning-comparison-study]]  (Microsoft researchers' verb-noun-pair and response-length analysis comparing GPT-3 and GPT-4 outputs)
+- [[gpt-instruction-tuning-comparison-study]]  (Microsoft researchers' verb-noun-pair and response-length analysis comparing GPT-3 and [[gpt-4|GPT-4]] outputs)
 
 ## Related
 - [[data-quality]]  (prerequisite: inspecting data is how quality issues are identified before curation decisions are made)
 - [[data-cleaning-and-filtering]]  (prerequisite: inspection findings inform what gets removed or filtered)
 - [[data-annotation]]  (see-also: inter-annotator disagreement checks apply inspection to annotated data)
 - [[evaluation]]  (see-also: the same distributional analysis used to inspect training data can be used to evaluate model outputs)
+- [[gpt-4]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch08-inspect-data]]

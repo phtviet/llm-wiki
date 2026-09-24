@@ -12,12 +12,12 @@ Finetuning is rarely the right first step in a new project, since it requires hi
 
 Finetuning also demands an ongoing policy and budget for monitoring, maintaining, and updating the model, since new base models are released faster than a finetuned model can typically be improved, raising the recurring question of when a better base model justifies switching (AIE p.313).
 
-The recommended path is to start AI engineering experiments with prompting and only explore finetuning or other advanced solutions once systematic, well-designed prompt experiments prove inadequate; many complaints about prompting's ineffectiveness trace back to unclear instructions, unrepresentative examples, and poorly defined metrics rather than a genuine limit of prompting (AIE p.314). Both prompting and finetuning experiments benefit from the same systematic processes: an evaluation pipeline, data annotation guidelines, and experiment tracking (AIE p.314).
+The recommended path is to start [[ai-engineering]] experiments with prompting and only explore finetuning or other advanced solutions once systematic, well-designed prompt experiments prove inadequate; many complaints about prompting's ineffectiveness trace back to unclear instructions, unrepresentative examples, and poorly defined metrics rather than a genuine limit of prompting (AIE p.314). Both prompting and finetuning experiments benefit from the same systematic processes: an evaluation pipeline, [[data-annotation]] guidelines, and experiment tracking (AIE p.314).
 
-Before prompt caching existed, one genuine benefit of finetuning was reducing token usage: instead of repeating examples in every prompt (which raises latency and cost and is capped by [[context-length]]), a model could be finetuned on those examples once, allowing a much shorter prompt with no limit on how many examples were used to train it. Prompt caching, which lets repetitive prompt segments be cached for reuse, has largely removed this benefit (AIE p.315).
+Before [[prompt-caching]] existed, one genuine benefit of finetuning was reducing token usage: instead of repeating examples in every prompt (which raises latency and cost and is capped by [[context-length]]), a model could be finetuned on those examples once, allowing a much shorter prompt with no limit on how many examples were used to train it. Prompt caching, which lets repetitive prompt segments be cached for reuse, has largely removed this benefit (AIE p.315).
 
 ## Key figures
-None. The figures in this section (BloombergGPT's parameter count and training cost, the GPT-4-0314 vs. BloombergGPT benchmark scores) are entity-specific and live on the [[bloomberggpt]] page.
+None. The figures in this section (BloombergGPT's parameter count and training cost, the [[gpt-4|GPT-4]]-0314 vs. BloombergGPT benchmark scores) are entity-specific and live on the [[bloomberggpt]] page.
 
 ## Examples
 - [[bloomberggpt]]  (domain-specific model outperformed by a general-purpose model on its own domain benchmarks)
@@ -29,6 +29,10 @@ None. The figures in this section (BloombergGPT's parameter count and training c
 - [[model-adaptation-workflow]]  (part-of: this reasoning underlies the book's staged prompting-then-RAG-then-finetuning progression)
 - [[model-merging]]  (see-also: offered as a way to combine per-task finetuned models instead of maintaining several)
 - [[inference-optimization]]  (prerequisite: serving a finetuned model requires solving inference optimization, a nontrivial cost of choosing to finetune)
+- [[data-annotation]]  (see-also: mentioned in this page's text)
+- [[ai-engineering]]  (see-also: mentioned in this page's text)
+- [[prompt-caching]]  (see-also: mentioned in this page's text)
+- [[gpt-4]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch07-reasons-not-to-finetune]]

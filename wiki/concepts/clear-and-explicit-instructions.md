@@ -10,7 +10,7 @@ First, explain without ambiguity what the model should do -- for example, specif
 
 Second, asking the model to adopt a persona can shift the perspective it uses to generate a response. The book's example: an essay about liking chickens scores 2/5 from a model with no persona, but 4/5 when the model is told to respond as a first-grade teacher (AIE p.220).
 
-Third, providing examples reduces ambiguity about the desired response, functioning as a form of [[few-shot-learning]]. The book's example: a children's chatbot asked 'Will Santa bring me presents on Christmas?' debunks Santa without examples, but affirms Santa's existence once given a prior example about the tooth fairy answered in-character (AIE p.221). Example formatting also has a cost dimension: a terser input-output arrow format ('chickpea --> edible') used 27 tokens versus 38 for a verbose input/output-labeled format for the same classification task on GPT-4, and the cheaper format should be preferred when performance is equal (AIE p.222).
+Third, providing examples reduces ambiguity about the desired response, functioning as a form of [[few-shot-learning]]. The book's example: a children's chatbot asked 'Will Santa bring me presents on Christmas?' debunks Santa without examples, but affirms Santa's existence once given a prior example about the tooth fairy answered in-character (AIE p.221). Example formatting also has a cost dimension: a terser input-output arrow format ('chickpea --> edible') used 27 tokens versus 38 for a verbose input/output-labeled format for the same classification task on [[gpt-4|GPT-4]], and the cheaper format should be preferred when performance is equal (AIE p.222).
 
 Fourth, specifying the output format matters both for cost/latency (longer outputs cost more per token and increase latency) and for downstream parseability. This includes telling the model to skip preambles (e.g. 'Based on the content of this essay, I'd give it a score of...'), specifying JSON keys, and, for structured-output tasks like classification, using explicit end-of-prompt markers so the model knows where to begin its structured output rather than continuing to append to the input list it was given (AIE p.222-223).
 
@@ -28,6 +28,7 @@ Fourth, specifying the output format matters both for cost/latency (longer outpu
 - [[prompt-structure]]  (see-also: examples and task description are compositional parts of a prompt whose ordering and format affect performance)
 - [[structured-outputs]]  (prerequisite: writing explicit format instructions and markers is one technique for getting a model to produce structured, machine-readable output)
 - [[prompting-for-structure]]  (see-also: instructing a model to follow an output format is the same underlying technique described here in more general terms)
+- [[gpt-4]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch05-write-clear-and-explicit-instructions]]

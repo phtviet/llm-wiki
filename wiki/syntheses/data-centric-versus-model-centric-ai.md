@@ -6,7 +6,7 @@ sources: [ch08-dataset-engineering]
 
 The book contrasts two approaches to improving AI performance. Model-centric AI
 improves performance by enhancing the model itself: designing new architectures,
-increasing model size, or developing new training techniques. Data-centric AI instead
+increasing [[model-size]], or developing new training techniques. Data-centric AI instead
 improves performance by enhancing the data: developing new data processing techniques
 and creating high-quality datasets that let a better model be trained with fewer
 resources (AIE p.364).
@@ -33,6 +33,7 @@ not a choice of one over the other (AIE p.365).
 ## Related
 - [[dataset-engineering]]  (prerequisite: dataset engineering is the practical discipline this data-centric framing motivates)
 - [[training-data-curation]]  (see-also: curating data for quality is a core data-centric-AI activity)
+- [[model-size]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch08-dataset-engineering]]

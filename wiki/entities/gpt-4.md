@@ -4,7 +4,7 @@ sources: [ch01-from-language-models-to-large-language-models]
 ---
 # GPT-4
 
-GPT-4 is the model behind ChatGPT, used in the book to illustrate tokenization and vocabulary (AIE p.3). It breaks the phrase 'I can't wait to build AI applications' into nine tokens, splitting 'can't' into 'can' and ''t' (AIE p.3).
+GPT-4 is the model behind ChatGPT, used in the book to illustrate [[tokenization]] and vocabulary (AIE p.3). It breaks the phrase 'I can't wait to build AI applications' into nine tokens, splitting 'can't' into 'can' and ''t' (AIE p.3).
 
 ## Key figures
 - Tokenizes the example phrase into 9 tokens (AIE p.3)
@@ -14,6 +14,7 @@ GPT-4 is the model behind ChatGPT, used in the book to illustrate tokenization a
 ## Related
 - [[token]]  (example-of: illustrates how tokenization splits text into tokens)
 - [[vocabulary]]  (example-of: illustrates a large model vocabulary, 100,256 tokens)
+- [[tokenization]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch01-from-language-models-to-large-language-models]]

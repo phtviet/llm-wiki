@@ -8,7 +8,7 @@ Summing is a model-merging approach that adds the weight values of constituent m
 
 **Linear combination** includes both simple averaging and weighted averaging: Merge(A, B) = (wA*A + wB*B) / (wA + wB). The idea of linearly combining multiple models dates to the early 1990s (Perrone, 1993) and is often used in federated learning (Wang et al., 2020). Model soups (Wortsman et al., 2022) showed that averaging the entire weights of multiple finetuned models can improve accuracy without increasing inference time, though it is more common to linearly combine specific components such as adapters (AIE p.350-351).
 
-Linear combination is most effective for models finetuned on the same base model, where it can be understood via **task vectors** (also called delta parameters): subtracting the base model from a finetuned model gives a vector capturing the task's essence. Task vectors support **task arithmetic** (Ilharco et al., 2022) -- adding task vectors to combine capabilities, or subtracting one to remove an undesirable behavior such as an invasive capability or a pre-training bias. If finetuning uses LoRA, the task vector can be constructed from the LoRA weights. Linear combination can also work across differing architectures or sizes by projecting layers into a shared dimension, and some approaches align models before averaging so functionally related parameters combine together, though alignment is challenging and less common than naive linear combination (AIE p.351-352).
+Linear combination is most effective for models finetuned on the same base model, where it can be understood via **task vectors** (also called delta parameters): subtracting the base model from a finetuned model gives a vector capturing the task's essence. Task vectors support **task arithmetic** (Ilharco et al., 2022) -- adding task vectors to combine capabilities, or subtracting one to remove an undesirable behavior such as an invasive capability or a [[pre-training|pre-training]] bias. If finetuning uses LoRA, the task vector can be constructed from the LoRA weights. Linear combination can also work across differing architectures or sizes by projecting layers into a shared dimension, and some approaches align models before averaging so functionally related parameters combine together, though alignment is challenging and less common than naive linear combination (AIE p.351-352).
 
 **Spherical linear interpolation (SLERP)** treats each model component as a point on a sphere and interpolates along the shortest path between two such points, with an interpolation factor between 0 and 1 controlling how close the merged result sits to each source (a factor of 0.5 is the exact midpoint). SLERP is defined for only two vectors at a time; merging more than two requires applying it sequentially (AIE p.352).
 
@@ -24,6 +24,7 @@ Linear combination is most effective for models finetuned on the same base model
 - [[model-merging]]  (part-of: summing is one of the three main merging approaches)
 - [[model-merging-layer-stacking]]  (contrast: summing combines parameter values directly vs. layer stacking arranges layers spatially)
 - [[peft]]  (prerequisite: task vectors can be constructed from LoRA adapter weights)
+- [[pre-training]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch07-model-merging-and-multi-task-finetuning]]

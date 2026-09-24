@@ -4,7 +4,7 @@ sources: [ch06-planning]
 ---
 # Planning
 
-Planning is the process by which a foundation model agent decomposes a task -- defined by its goal and constraints -- into a plan: a roadmap of steps needed to accomplish it (AIE p.281). Given a task, many decompositions are possible, but not all succeed, and among correct ones some are more efficient than others; an intelligent agent should prefer the more efficient decomposition (AIE p.282).
+Planning is the process by which a [[foundation-model]] agent decomposes a task -- defined by its goal and constraints -- into a plan: a roadmap of steps needed to accomplish it (AIE p.281). Given a task, many decompositions are possible, but not all succeed, and among correct ones some are more efficient than others; an intelligent agent should prefer the more efficient decomposition (AIE p.282).
 
 Planning can be coupled with execution in a single prompt (e.g. a chain-of-thought prompt that both plans and executes), but this risks an agent running a long, useless plan for hours before the failure is noticed. To avoid fruitless execution, planning should be decoupled from execution: a plan is generated, then validated (via heuristics such as rejecting invalid actions or overly long plans, or via an AI judge), and only a validated plan is executed. Plans can also be generated in parallel and the most promising one selected, trading extra cost for lower latency (AIE p.282).
 
@@ -28,6 +28,7 @@ None.
 - [[control-flow]] (part-of: the order in which a plan's actions are executed)
 - [[reinforcement-learning-versus-foundation-model-planners]] (contrast: how RL agents and FM agents differ in how their planners are built)
 - [[planning-failures]] (see-also: agent evaluation category covering planning-specific errors)
+- [[foundation-model]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch06-planning]]

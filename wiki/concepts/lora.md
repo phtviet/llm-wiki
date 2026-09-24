@@ -10,12 +10,12 @@ Given a weight matrix W of dimension n x m, LoRA chooses a rank r, constructs ma
 
 LoRA is applied most commonly to the four attention-module weight matrices -- query (Wq), key (Wk), value (Wv), and output projection (Wo) -- uniformly across all matrices of the same type in the model (AIE p.341-342). Under a fixed trainable-parameter budget, Hu et al. (2021) found applying rank-2 LoRA to all four matrices gave the best results on WikiSQL and MultiNLI, though if only two matrices can be chosen, query and value generally perform best (AIE p.342). Empirically, small ranks (r between 4 and 64) are usually sufficient, and increasing r does not reliably improve performance and can even cause overfitting, though Raschka (2023) found r=256 best for his tasks; applying LoRA to feedforward matrices as well as attention matrices, as Databricks found, can yield the biggest performance boost (AIE p.343).
 
-Why LoRA works ties to the finding that LLMs have low intrinsic dimension after pre-training, larger models having even lower intrinsic dimension, suggesting pre-training itself acts as a compression framework that makes small-parameter, small-data finetuning sufficient (AIE p.340). Low-rank pre-training (training a factorized model from scratch, e.g. ReLoRA up to 1.3B parameters and GaLore at 1B-7B parameters) remains an open research direction, since full-rank pre-training may still be needed to sufficiently reduce intrinsic dimension before low-rank training can work (AIE p.340-341).
+Why LoRA works ties to the finding that LLMs have low intrinsic dimension after [[pre-training|pre-training]], larger models having even lower intrinsic dimension, suggesting pre-training itself acts as a compression framework that makes small-parameter, small-data finetuning sufficient (AIE p.340). Low-rank pre-training (training a factorized model from scratch, e.g. ReLoRA up to 1.3B parameters and GaLore at 1B-7B parameters) remains an open research direction, since full-rank pre-training may still be needed to sufficiently reduce intrinsic dimension before low-rank training can work (AIE p.340-341).
 
-LoRA's main drawback is weaker performance than full finetuning, and applying it requires understanding the target model's architecture (AIE p.345). LoRA adapters are modular: they can be merged into the base model before serving (no added latency, best for single-model serving) or kept separate and merged at inference time (adds latency, but enables multi-LoRA serving of many finetuned variants sharing one base model, at far less storage) (AIE p.343-344).
+LoRA's main drawback is weaker performance than [[full-finetuning]], and applying it requires understanding the target model's architecture (AIE p.345). LoRA adapters are modular: they can be merged into the base model before serving (no added latency, best for single-model serving) or kept separate and merged at inference time (adds latency, but enables multi-LoRA serving of many finetuned variants sharing one base model, at far less storage) (AIE p.343-344).
 
 ## Key figures
-- GPT-3: comparable or better performance than full finetuning using ~4.7M trainable parameters, 0.0027% of full finetuning (AIE p.340)
+- GPT-3: comparable or better performance than full finetuning using ~4.7M [[trainable-parameters]], 0.0027% of full finetuning (AIE p.340)
 - GPT-3 175B finetuning budget of 18M trainable parameters (0.01% of total): rank-2 LoRA on all four attention matrices = (12,288 x 2 x 2) x 4 = 196,608 parameters/layer, 18,874,368 total across 96 layers (AIE p.342)
 - WikiSQL/MultiNLI at 18M-parameter budget: all four matrices at rank 2 reach 73.7% WikiSQL / 91.7% MultiNLI, the best combination tested (AIE p.342)
 - SqueezeNet reaches AlexNet-level ImageNet accuracy using 50x fewer parameters via factorization strategies (AIE p.340)
@@ -31,6 +31,9 @@ LoRA's main drawback is weaker performance than full finetuning, and applying it
 - [[quantization]] (prerequisite: QLoRA combines LoRA with quantization of model weights)
 - [[alexnet]] (example-of: SqueezeNet's low-rank factorization matches AlexNet-level accuracy with 50x fewer parameters)
 - [[model-merging]] (see-also: LoRA-adapter merging back into base weights parallels, but is distinct from, merging separate whole models)
+- [[trainable-parameters]]  (see-also: mentioned in this page's text)
+- [[full-finetuning]]  (see-also: mentioned in this page's text)
+- [[pre-training]]  (see-also: mentioned in this page's text)
 
 ## Provenance
 - [[sources/ch07-parameter-efficient-finetuning]]
