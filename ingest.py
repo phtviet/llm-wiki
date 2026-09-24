@@ -23,6 +23,7 @@ from dotenv import load_dotenv
 ROOT = Path(__file__).resolve().parent
 WIKI = ROOT / "wiki"
 SCHEMA_PATH = ROOT / "SCHEMA.md"
+EXEMPLARS_DIR = ROOT / "exemplars"
 # Set to your current preferred model. Escalate to a stronger model only if calibration
 # shows this one falls short of your hand pages. Check docs.claude.com for current names.
 MODEL = os.getenv("WIKI_MODEL", "claude-sonnet-5")
@@ -75,6 +76,9 @@ def build_system(schema: str) -> str:
         "page's content. Page content is the finished wiki page a reader sees and must "
         "contain nothing but the page itself. A dangling link to a not-yet-created page is "
         "normal: leave the page text clean and, if worth surfacing, note it in review_flags.\n\n"
+        "Your output MUST be valid, parseable JSON. Inside string values, escape every "
+        "double quote as \\\" and every backslash as \\\\. Avoid double quotes inside "
+        "page text where possible -- use single quotes instead.\n\n"
         "Return ONLY a JSON object, no prose, no code fences, with this exact shape:\n"
         "{\n"
         '  "pages": [{"path": "concepts/<slug>.md", "action": "create" or "update",\n'
@@ -142,30 +146,46 @@ def main() -> None:
     if not schema:
         sys.exit(f"SCHEMA.md not found at {SCHEMA_PATH}")
     index_text = read(WIKI / "index.md")
-    exemplars = [(e, read(WIKI / e)) for e in args.exemplars]
+    exemplars = [(e, read(EXEMPLARS_DIR / e)) for e in args.exemplars]
 
     from anthropic import Anthropic  # imported here so --help / tests need no key
     load_dotenv(ROOT / ".env")
     client = Anthropic()  # reads ANTHROPIC_API_KEY
 
-    resp = client.messages.create(
-        model=MODEL,
-        max_tokens=MAX_TOKENS,
-        thinking={"type": "disabled"},  # ingest is extraction, not reasoning; don't spend budget on it
-        system=build_system(schema),
-        messages=[{"role": "user", "content": build_user(
-            section_path.name, section_path.stem, section_text, index_text, exemplars)}],
-    )
+    user_msg = build_user(section_path.name, section_path.stem, section_text, index_text, exemplars)
+    system_msg = build_system(schema)
 
-    # Guard 1: truncation announces itself instead of dying in the parser.
-    if resp.stop_reason == "max_tokens":
-        sys.exit(f"Output hit max_tokens ({MAX_TOKENS}) and was truncated. Raise MAX_TOKENS.")
-    raw = "".join(b.text for b in resp.content if b.type == "text")
-    # Guard 2: an empty/ non-text reply says so, with the block types, instead of failing blank.
-    if not raw.strip():
-        sys.exit(f"No text in reply (stop_reason={resp.stop_reason}); blocks={[b.type for b in resp.content]}")
+    data = None
+    last_err = None
+    for attempt in range(1, 4):  # up to 3 tries: malformed JSON on big sections is common
+        messages = [{"role": "user", "content": user_msg}]
+        if attempt > 1:
+            messages[0]["content"] += (
+                f"\n\nNOTE: your previous reply was not valid JSON ({last_err}). "
+                "Return ONLY a valid JSON object this time. Escape all inner double quotes."
+            )
+        resp = client.messages.create(
+            model=MODEL,
+            max_tokens=MAX_TOKENS,
+            thinking={"type": "disabled"},
+            system=system_msg,
+            messages=messages,
+        )
+        if resp.stop_reason == "max_tokens":
+            sys.exit(f"Output hit max_tokens ({MAX_TOKENS}) and was truncated. Raise MAX_TOKENS.")
+        raw = "".join(b.text for b in resp.content if b.type == "text")
+        if not raw.strip():
+            sys.exit(f"No text in reply (stop_reason={resp.stop_reason}); blocks={[b.type for b in resp.content]}")
+        try:
+            data = parse_json(raw)
+            break
+        except (json.JSONDecodeError, ValueError) as e:
+            last_err = str(e)[:120]
+            print(f"  attempt {attempt}: bad JSON ({last_err}); retrying" if attempt < 3 else
+                  f"  attempt {attempt}: bad JSON ({last_err})")
+    if data is None:
+        sys.exit(f"Failed to get valid JSON after 3 attempts: {last_err}")
 
-    data = parse_json(raw)
 
     if args.dry_run:
         print(json.dumps(data, indent=2, ensure_ascii=False))
