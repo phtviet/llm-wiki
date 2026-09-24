@@ -28,6 +28,7 @@ EXEMPLARS_DIR = ROOT / "exemplars"
 # shows this one falls short of your hand pages. Check docs.claude.com for current names.
 MODEL = os.getenv("WIKI_MODEL", "claude-sonnet-5")
 MAX_TOKENS = 16000  # output budget; thinking is disabled below so this is all for output
+VERSION = "ingest.py v3 (retry + exemplar guard)"
 
 
 def read(p: Path) -> str:
@@ -64,6 +65,9 @@ def build_system(schema: str) -> str:
         "steps in a workflow without explaining each creates LINKS to them, not pages. "
         "When unsure, prefer a link over a page. A page for a merely-named concept is a "
         "failure, not a happy accident.\n\n"
+        "INDEX: index_entries lists ONLY concept, entity, and synthesis pages. NEVER add a "
+        "sources/ page to index_entries -- source pages are provenance records, not query "
+        "targets, and must stay out of the index.\n\n"
         "SLUGS: if a concept or entity already appears in the current index, reuse its "
         "EXACT existing slug and target that same page. Never invent a variant slug "
         "(e.g. 'evaluation-ch1', 'finetuning-2') for something that already exists.\n\n"
@@ -137,6 +141,7 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true", help="print the model's JSON, write nothing")
     args = ap.parse_args()
 
+    print(f"[{VERSION} | model={MODEL}]")
     section_path = Path(args.section)
     section_text = read(section_path)
     if not section_text:
@@ -146,7 +151,13 @@ def main() -> None:
     if not schema:
         sys.exit(f"SCHEMA.md not found at {SCHEMA_PATH}")
     index_text = read(WIKI / "index.md")
-    exemplars = [(e, read(EXEMPLARS_DIR / e)) for e in args.exemplars]
+    exemplars = []
+    for e in args.exemplars:
+        content = read(EXEMPLARS_DIR / e)
+        if not content.strip():
+            sys.exit(f"Exemplar missing or empty: {EXEMPLARS_DIR / e}\n"
+                     f"(exemplars are read from {EXEMPLARS_DIR}, not wiki/)")
+        exemplars.append((e, content))
 
     from anthropic import Anthropic  # imported here so --help / tests need no key
     load_dotenv(ROOT / ".env")
